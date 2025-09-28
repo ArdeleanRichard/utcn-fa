@@ -21,8 +21,8 @@ def extract_pdftitle(tex_file: Path) -> str | None:
     return None
 
 def build_pdf(tex_file: Path, pdf_title: str, output_dir: Path):
-    """Compile tex_file into PDF named after pdf_title and clean aux files."""
-    jobname = pdf_title  # use the title directly, spaces allowed
+    """Compile tex_file into PDF named exactly after pdf_title and clean aux files."""
+    jobname = pdf_title  # keep spaces and symbols
     print(f"▶ Building {tex_file} → {jobname}.pdf")
 
     # Compile with latexmk
@@ -32,8 +32,11 @@ def build_pdf(tex_file: Path, pdf_title: str, output_dir: Path):
         check=True
     )
 
-    # Move the PDF to output folder
+    # Move PDF to output folder
     generated_pdf = tex_file.parent / f"{jobname}.pdf"
+    if not generated_pdf.exists():
+        raise FileNotFoundError(f"Expected PDF not found: {generated_pdf}")
+    
     output_dir.mkdir(parents=True, exist_ok=True)
     shutil.move(str(generated_pdf), output_dir / f"{jobname}.pdf")
 
@@ -43,6 +46,14 @@ def build_pdf(tex_file: Path, pdf_title: str, output_dir: Path):
         cwd=tex_file.parent,
         check=False
     )
+
+    # Extra cleanup (optional, only deletes standard aux files)
+    for ext in [".aux", ".log", ".fdb_latexmk", ".fls", ".toc", ".out"]:
+        aux_file = tex_file.parent / f"{jobname}{ext}"
+        if aux_file.exists():
+            aux_file.unlink()
+
+
 
 def main():
     # Only include .tex files outside the output folder
