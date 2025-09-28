@@ -22,9 +22,8 @@ def extract_pdftitle(tex_file: Path) -> str | None:
 
 def build_pdf(tex_file: Path, pdf_title: str, output_dir: Path):
     """Compile tex_file into PDF named after pdf_title and clean aux files."""
-    safe_name = pdf_title.replace(" ", "_")  # safe filename
-    jobname = safe_name
-    print(f"▶ Building {tex_file} → {safe_name}.pdf")
+    jobname = pdf_title  # use the title directly, spaces allowed
+    print(f"▶ Building {tex_file} → {jobname}.pdf")
 
     # Compile with latexmk
     subprocess.run(
@@ -34,9 +33,9 @@ def build_pdf(tex_file: Path, pdf_title: str, output_dir: Path):
     )
 
     # Move the PDF to output folder
-    generated_pdf = tex_file.parent / f"{safe_name}.pdf"
+    generated_pdf = tex_file.parent / f"{jobname}.pdf"
     output_dir.mkdir(parents=True, exist_ok=True)
-    shutil.move(str(generated_pdf), output_dir / f"{safe_name}.pdf")
+    shutil.move(str(generated_pdf), output_dir / f"{jobname}.pdf")
 
     # Clean auxiliary files
     subprocess.run(
