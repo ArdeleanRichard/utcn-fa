@@ -1,0 +1,271 @@
+\documentclass[../en-fa-lab.tex]{subfiles}
+
+
+\usepackage{hyperref}
+\hypersetup{
+    pdftitle={Laboratory Guide},   % The title shown in the browser tab
+    pdfauthor={},         % Your name or organization
+    pdfsubject={},   % A brief description
+    pdfkeywords={}
+}
+
+
+\begin{document}
+
+\section{\texorpdfstring{\textbf{Laboratory Guide}}{Laboratory Guide}}\label{laboratory-guide}
+\subsection{\texorpdfstring{\textbf{About the
+laboratory}}{About the laboratory}}\label{about-the-laboratory}
+
+This semester, you will implement a series of algorithms and you will
+analyze the \emph{correctness} and the \emph{efficiency} of your own
+implementations. The implementations will have a starting point the
+pseudocode that is provided at the \textbf{course} and \textbf{seminary}
+sessions. You can write your code in C or C++ or another language that
+you are familiar with as long as you implement all the data structures
+that are required.
+
+\subsection{\texorpdfstring{\textbf{Laboratory
+Format}}{Laboratory Format}}\label{laboratory-format}
+
+\subsubsection{\texorpdfstring{\textbf{Rules}}{Rules}}\label{rules}
+
+\begin{itemize}
+\item
+  \emph{Attendance} is \textbf{mandatory}
+\item
+  \emph{One} absence can be recovered (the corresponding assignment
+  \ul{MUST} be \emph{delivered} and \emph{verified} the following week)
+\item
+  A second absence can be recovered in the special laboratory session at
+  the end of the semester (\ul{surcharge}) by solving additional
+  assignments (solving the corresponding assignment of the missed
+  session will NOT be considered)
+\item
+  If you miss more than 2 sessions, \textbf{you will not be able to
+  attend the exam in the regular exam session}
+\item
+  \textbf{IN EXCEPTIONAL CASES}, you can attend another laboratory
+  sessions in the same week with another group \emph{if} you announce
+  your laboratory assistant on email and you receive his agreement; the
+  assignment will be delivered to and verified by the laboratory
+  assistant of the sessions you are signed up for (the assignment has to
+  be uploaded on time and will be presented the following week at the
+  laboratory session)
+\end{itemize}
+
+\subsubsection{\texorpdfstring{\textbf{Grading}}{Grading}}\label{grading}
+
+\begin{itemize}
+\item
+  The laboratory grade is equal to \textbf{30\%} of the final grade
+\item
+  The laboratory grade is composed of two parts: \textbf{assignments grade} - 2/3 of lab grade (that is \textbf{20\%} of final grade) and \textbf{colloquy/lab exam} - 1/3 of lab grade (that is \textbf{10\%} of final grade) 
+\item Assignments:
+\begin{itemize}
+    \item
+      Each assignment has the same weight in the calculation of the
+      assignments grade - unweighted arithmetic mean formula is used
+    \item
+      Each assignment has 4 grading thresholds for the following grades: 5,
+      7, 9 and 10 (the requirements for each grade can be viewed in the
+      laboratory assignment documentation)
+    % \item
+    %   Passing  to the exam is conditioned by a grade (determined by the
+    %   formula mentioned above) of \textbf{at least 5 in the laboratory}
+\end{itemize}
+\item Colloquy:
+\begin{itemize}
+    \item The colloquy consists of a closed book lab test in the last week of the semester (W14)
+    \item The colloquy must be held by each student on the computers available in the laboratory room (no personal laptops / computers) 
+\end{itemize}
+
+\item In order to pass the laboratory and be granted participation in the exam you need \textbf{both}:
+\begin{itemize}
+    \item Assignments grade $\geq 5$
+    \item Colloquy grade $\geq\ 5$
+\end{itemize}
+
+\end{itemize}
+
+%\subsubsection{\texorpdfstring{\textbf{Assignments}}{Assignments}}\label{assignments}
+
+\subsubsection{\texorpdfstring{\textbf{Assignments Delivery}}{Assignments Delivery}}\label{delivery}
+
+\begin{itemize}
+\item
+  At the assessment discussion you will present: \textbf{source code,
+  charts and runnable demo code}
+\item
+  \textbf{Source code} (program.cpp) and the \textbf{charts} \textbf{MUST}
+  be uploaded to Moodle, in the archive (program.zip), \textbf{before the lab session}
+\item
+  \emph{Unindented} code will \textbf{not be evaluated}
+\item
+  If you cannot explain the used algorithms, the assignment will
+  \textbf{not be evaluated}
+\item
+  Each source file must contain at the beginning a comment of the
+  following format:
+\end{itemize}
+
+/**
+
+* @author John Smith
+
+* @group 30xyz
+
+*
+
+* Assignment requirements, ex: Compare the sorting methods X and Y
+
+*
+
+* Personal interpretation of the (time and space) complexity of the
+average, best and worst testing Interpretarea
+
+* cases. For example: ``Method X has a time complexity of Y in case Z
+because \ldots''
+
+*/
+
+\subsubsection{\texorpdfstring{\textbf{Algorithm complexity
+evaluation}}{Algorithm complexity evaluation}}\label{algorithm-complexity-evaluation}
+
+\begin{itemize}
+\item
+  For the average case, you need to repeat the measurements \emph{at
+  least 5 times}
+\item
+  Measure the number of operations made by the algorithm (the
+  assignments and the comparisons of the input data or the auxiliary
+  variables that contain input data)
+\item
+  Vary the dimensions of the input data consistent with the requirements
+  of each assignment
+\item
+  Apply the same input data on each algorithm when making comparative
+  evaluations (for the average case)
+\item
+  Generate evaluation charts (either in \textbf{Excel} or by using
+  \textbf{Profiler})
+\item
+  Analyze the charts and add your personal observations at the beginning
+  of the source code using the above mentioned format
+\end{itemize}
+
+\subsubsection{\texorpdfstring{\textbf{Delivery
+deadline}}{Delivery deadline}}\label{delivery-deadline}
+
+Assignments can be delivered:
+
+\begin{itemize}
+\item
+  During the laboratory sessions that they are presented in. At the end
+  of the laboratory you \ul{MUST} upload to Moodle a draft version of
+  the current assignment (containing what you managed to implement
+  during the session). A lack of a submission at the end of the session
+  (or a lack of relevant code) will receive of penalty of up to 2 points
+  of the grade of that assignment
+\item
+  \textbf{Extension\_1} (E1): at the beginning of the next laboratory
+  session
+\item
+  \textbf{Extension\_2} (E2): \ul{specific} assignments can be delivered
+  at the beginning of the second laboratory after the assignment was
+  presented (with a penalty of -2).
+\item
+  Starting with the third laboratory after the assignment was presented,
+  the assignment cannot be delivered anymore (will be graded as 0)
+\end{itemize}
+
+You can find a planning of the assignment and their extensions on Moodle
+(file name: \ul{Planificare Saptamanala (bachelor)} )
+
+Each assignment \ul{MUST} be uploaded to Moodle before the beginning of
+the laboratory session during which it will be delivered.
+
+\subsubsection{\texorpdfstring{\textbf{Attempted
+Fraud}}{Attempted Fraud}}\label{attempted-fraud}
+
+For the first uncovered attempt at fraud (copying someone else's code or using code generated by AI tools)
+you will receive a penalty of 10 points of the total accumulated points
+(until that moment). For a subsequent attempt, you will have to \textbf{retake the course next year}.
+
+\subsection{\texorpdfstring{\textbf{Laboratory session
+transfer}}{Laboratory session transfer}}\label{laboratory-session-transfer}
+
+If you wish to participate at laboratory sessions with another assistant
+you \ul{must} follow these rules:
+
+\begin{itemize}
+\item
+  Student S1 from group G1 can transfer to group G2 if and only if a
+  student S2 from group G2 can be found that is willing to participate
+  with G1 at the assigned laboratory session hours of G1.
+\end{itemize}
+
+To formalize the transfer you must send an email in which you mention
+with whom are you making the transfer/exchange:
+
+\begin{itemize}
+\item
+  An email from S1 to both laboratory assistants
+\item
+  An email from S2 to both laboratory assistants
+\end{itemize}
+
+The laboratory session transfer deadline is the \textbf{end of the
+second week} of the semester.
+
+\subsection{\texorpdfstring{\textbf{Suggested
+literature}}{Suggested literature}}\label{suggested-literature}
+
+\begin{itemize}
+\item
+    \href{https://drive.google.com/drive/folders/12NX3D8DLrPuU-9ffI9MjnoKUNjjftWRg?usp=sharing}{Cormen, T. H. et al (2009). Introduction to algorithms. MIT press}
+  
+\item
+    \href{https://drive.google.com/drive/folders/12NX3D8DLrPuU-9ffI9MjnoKUNjjftWRg?usp=sharing}{J. Kleinberg, E. Tardos (2005). Algorithm Design. Addison Wesley}
+
+\item
+  C/C++ Tutorials
+
+  \begin{itemize}
+  \item
+    \href{http://www.cprogramming.com/begin.html}{\ul{http://www.cprogramming.com/begin.html}}
+  \item
+    \href{http://www.learn-c.org}{\ul{http://www.learn-c.org}}
+  \item
+    Accelerated C++: Practical Programming by Example
+  \end{itemize}
+\item
+  Coding Styles
+
+  \begin{itemize}
+  \item
+    \href{http://users.ece.cmu.edu/~eno/coding/CCodingStandard.html}{\ul{http://users.ece.cmu.edu/\textasciitilde eno/coding/CCodingStandard.html}}
+  \item
+    \href{http://www.cs.swarthmore.edu/~newhall/unixhelp/c_codestyle.html}{\ul{http://www.cs.swarthmore.edu/\textasciitilde newhall/unixhelp/c\_codestyle.html}}
+  \item
+    \href{http://google-styleguide.googlecode.com/svn/trunk/cppguide.xml}{\ul{http://google-styleguide.googlecode.com/svn/trunk/cppguide.xml}}
+  \end{itemize}
+\end{itemize}
+
+
+\subsection{\texorpdfstring{\textbf{Profiler}}{Profiler}}\label{profiler}
+The library that will be utilized for the generation of plots, each student must go through the given example and tutorial.
+\\\\
+The most recent version can be found here: 
+
+https://github.com/cypryoprisa/utcn-fa-profiler
+\\\\
+Profiler Tutorial:
+
+- \href{https://youtu.be/iE4FFwdncDk}{Part 1}
+
+- \href{https://youtu.be/vMhwBXEelSA}{Part 2}
+
+- \href{https://youtu.be/ZOztj7aPWs4}{Part 3}
+
+
+\end{document}

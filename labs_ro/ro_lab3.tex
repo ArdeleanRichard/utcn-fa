@@ -1,0 +1,185 @@
+\documentclass[../ro-fa-lab.tex]{subfiles}
+\usepackage{hyperref}
+\hypersetup{
+    pdftitle={(RO) L3 - Heapsort vs Quicksort},   % The title shown in the browser tab
+    pdfauthor={},         % Your name or organization
+    pdfsubject={},   % A brief description
+    pdfkeywords={}
+}
+
+\begin{document}
+
+
+\section{\texorpdfstring{\textbf{Tema Nr. 3: Analiza și compararea metodelor avansate de sortare
+-- HeapSort și QuickSort / QuickSelect}}{Tema Nr. 3: Analiza și compararea metodelor avansate de sortare
+-- HeapSort și QuickSort / QuickSelect}}\label{assign3}
+
+
+\textbf{Timp alocat:} 2 ore
+
+\subsection{Implementare}\label{implementare}
+
+Se cere implementarea \textbf{corectă} și \textbf{eficientă} a Sortării
+Rapide (\emph{Quicksort}), Sortării Rapide Hibridizate (\emph{Hybrid
+Quicksort}) și \emph{Quick-Select} (\emph{Randomized-Select}). Se cere
+și analizarea comparative a complexității Sortării folosind Heap-uri
+\emph{(Heapsort,} implementat în Tema Nr. 2\emph{)} și Sortarea Rapidă
+\emph{(Quicksort)}.
+
+Informații utile și pseudo-cod găsiți în notițele de curs
+sau în carte\citep{cormen}:
+
+\begin{itemize}
+\item
+  \emph{Heapsort}: capitolul 6 (Heapsort)
+\item
+  \emph{Quicksort}: capitolul 7 (Quicksort)
+\item
+  \emph{Hibridizare quicksort utilizând insertion sort
+  iterativ -} in quicksort, pentru dimensiuni de șir \textless{} prag,
+  se utilizeaza insertion sort (folosiți implementarea insertion sort
+  din Tema Nr. 1).
+\item
+  \emph{QuickSelect/Randomized Select:} capitolul 9
+\end{itemize}
+
+\subsection{Cerințe minimale pentru
+notare}\label{cerinux21be-minimale-pentru-notare}
+
+\begin{itemize}
+\item
+  Interpretați graficul și notați observațiile personale în antetul
+  fișierului \emph{main.cpp}, într-un comentariu bloc informativ.
+\end{itemize}
+
+\begin{itemize}
+\item
+  Pregătiți un exemplu pentru exemplificarea corectitudinii fiecărui
+  algoritm implementat.
+\item
+  Nu preluăm teme care nu sunt indentate și care nu sunt organizate în
+  funcții (de exemplu nu preluam teme unde tot codul este pus in main)
+\end{itemize}
+
+\begin{itemize}
+\item
+  \emph{\textbf{Punctajele din barem se dau pentru rezolvarea corectă și
+  completă a cerinței, calitatea interpretărilor din comentariul bloc și
+  răspunsul corect dat de voi la întrebările puse de către profesor.}}
+\end{itemize}
+
+\subsection{Cerințe}\label{cerinux21be}
+
+\subsubsection{QuickSort: implementare
+(2p)}\label{quicksort-implementare-2p}
+
+Corectitudinea algoritmului va trebui exemplificată pe date de intrare
+de dimensiuni mici.
+
+\subsubsection{QuickSort: evaluare în caz mediu statistic, favorabil si
+defavorabil
+(3p)}\label{quicksort-evaluare-uxeen-caz-mediu-statistic-favorabil-si-defavorabil-3p}
+
+\textbf{!} Înainte de a începe să lucrați pe partea de evaluare,
+asigurați-vă că aveți un \textbf{algoritm corect}!
+
+Pașii de analiză:
+
+- variați dimensiunea șirului de intrare (\emph{n}) între
+{[}100\ldots10000{]}, cu un increment de maxim 500 (sugerăm 100).
+
+- pentru fiecare dimensiune (\emph{n}), generați date de intrare
+adecvate metodei de construcție; rulați metoda numărând operațiile
+elementare (atribuiri și comparații - pot fi numărate împreună pentru
+această temă).
+
+\textbf{!} Doar atribuirile și comparație care se fac pe datele de
+intrare și pe datele auxiliare corespunzătoare se iau în considerare.
+
+\subsubsection{QuickSort și HeapSort: analiză comparativă a cazului mediu
+statistic
+(2p)}\label{quicksort-ux219i-heapsort-analizux103-comparativux103-a-cazului-mediu-statistic-2p}
+
+Se cere compararea celor două metode de sortare în cazul \textbf{mediu
+statistic}. Pentru cazul \textbf{mediu statistic} va trebui să repetați
+măsurătorile de \emph{m} ori (m=5) și să raportați valoarea lor medie;
+de asemenea, pentru cazul \textbf{mediu statistic}, asigurați-vă că
+folosiți \textbf{aceleași} date de intrare pentru cele două metode.
+
+Generați un grafic ce compară cele două metode de construcție în cazul
+\textbf{mediu statistic} pe baza numărului de operații obținut la pasul
+anterior.
+
+Dacă o curba nu poate fi vizualizată corect din cauza că celelalte curbe
+au o rată mai mare de creștere, atunci plasați noua curbă pe un alt
+grafic. Denumiți adecvat graficele și curbele.
+
+\subsubsection{Implementarea hibridizării quicksort-ului
+(1p)}\label{implementarea-hibridizux103rii-quicksort-ului-1p}
+
+Corectitudinea algoritmilor va trebui exemplificată pe date de intrare
+de dimensiuni mici.
+
+\subsubsection{Determinare a unui prag optim în hibridizare + motivație
+(grafice/măsuratori)
+(1p)}\label{determinare-a-unui-prag-optim-uxeen-hibridizare-motivaux21bie-graficemux103suratori-1p}
+
+Determinarea optimului din perspectiva pragului utilizat se realizează
+prin varierea valorii de prag pentru care se aplică insertion sort.
+
+Comparați rezultatele obținute din perspectiva performanței (timpului de
+execuție și a numărului de operații) pentru a determina o valoare optima
+a pragului. Puteți folosi 10,000 ca dimensiune fixă a vectorului ce
+urmează sa fie sortat și variați pragul între {[}5,50{]} cu un increment
+de 1 până la 5.
+
+Numărul de teste care trebuie sa fie repetate (nr\_tests din exemplul de
+mai sus) trebuie ales în funcție de procesor și modul de compilare.
+Sugerăm valori mai mari, precum 100 sau 1000.
+
+\subsubsection{\texorpdfstring{Analiză comparativă (între \emph{quicksort
+și quicksort hibridizat}) din punct de vedere a numărului de operații și
+a timpului efectiv de execuție
+(1p)}{Analiză comparativă (între quicksort și quicksort hibridizat) din punct de vedere a numărului de operații și a timpului efectiv de execuție (1p)}}\label{analizux103-comparativux103-uxeentre-quicksort-ux219i-quicksort-hibridizat-din-punct-de-vedere-a-numux103rului-de-operaux21bii-ux219i-a-timpului-efectiv-de-execuux21bie-1p}
+
+\textbf{!} Înainte de a începe să lucrați pe partea de evaluare,
+asigurați-vă că aveți un \textbf{algoritm corect}!
+
+Corectitudinea algoritmilor va trebui exemplificată pe date de intrare
+de dimensiuni mici.
+
+Pentru hibridizare quicksort, trebuie să utilizați versiunea iterativă
+de insertion sort din prima temă în cazul în care dimensiunea vectorului
+este mică (sugerăm utilizarea insertion sort dacă vectorul are sub 30 de
+elemente). Comparați \emph{timpul de rulare și numărul de operații}
+(asignări + comparații) pentru quicksort implementat în tema 3 cu cel
+hibridizat.
+
+Pentru a măsura timpul de execuție puteți folosi Profiler similar cu
+exemplul de mai jos.
+\\
+
+\emph{profiler.startTimer("your\_function", current\_size);}
+
+\emph{for(int test=0; test\textless nr\_tests; ++test) \{}
+
+\quad\emph{your\_function(array, current\_size);}
+
+\emph{\}}
+
+\emph{profiler.stopTimer("your\_function", current\_size);}
+\\
+
+În momentul în care măsurați timpul de execuție, asigurați-vă că opriți
+orice alte procese care nu sunt necesare.
+
+\subsubsection{Bonus: QuickSelect - Randomized-Select
+(0.5p)}\label{bonus-quickselect---randomized-select-0.5p}
+
+Corectitudinea algoritmului va trebui exemplificată pe date de intrare
+de dimensiuni mici.
+
+Pentru QuickSelect (Randomized-Select) nu trebuie facuta analiza
+complexității, doar corectitudinea trebuie exemplificată.
+
+\end{document}

@@ -1,0 +1,252 @@
+\documentclass[../en-fa-lab.tex]{subfiles}
+
+\usepackage{hyperref}
+\hypersetup{
+    pdftitle={Ghid de laborator},   % The title shown in the browser tab
+    pdfauthor={},         % Your name or organization
+    pdfsubject={},   % A brief description
+    pdfkeywords={}
+}
+
+
+\begin{document}
+
+\section{\texorpdfstring{\textbf{Ghid de laborator}}{Ghid de laborator}}\label{ghid}
+
+\subsection{Despre laborator}\label{despre-laborator}
+
+În acest semestru, urmează să implementați o serie de algoritmi și să
+analizați corectitudinea și eficiența propriilor implementări.
+Implementările vor avea ca punct de pornire pseudo-codul de la curs și
+seminar. Le puteți scrie în C sau C++ sau un alt limbaj de programare pe
+care îl cunoașteți atâta timp cât implementați toate structurile de date
+de care aveți nevoie.
+
+\subsection{Formatul laboratorului}\label{formatul-laboratorului}
+
+\subsubsection{Reguli}\label{reguli}
+
+\begin{itemize}
+\item
+  Prezența este obligatorie
+\item
+  O absență poate fi recuperată (tema corespunzătoare poate fi predată
+  în următoarea săptămână)
+\item
+  Absența a 2-a poate fi recuperata în laboratorul special de la
+  sfârșitul semestrului
+  (\href{http://ac.utcluj.ro/regulamente.html?file=files/regulamente_studenti/Taxe_2015-2016.pdf}{\ul{contra cost}}) rezolvând teme suplimentare (NU se rezolva tema
+  corespunzatoare sesiunii in care s-a inregistrat absenta)
+\item
+  Dacă ai mai mult de 2 absențe \textbf{nu poţi participa la examen în
+  sesiunea normală}
+\item
+  \textbf{IN MOD EXCEPTIONAL}, poți participa la laborator în aceeași
+  săptămână cu o altă grupă dacă mă anunți din timp pe email, si
+  primesti acordul meu (a cadrului didactic de laborator de la care
+  lipsesti); tema se prezinta tot cadrului didactic la sesiunile căruia
+  ești înscris (tema se incarcă la timp, se prezintă data urmatoare când
+  participi cu semigrupa ta)
+\end{itemize}
+
+\subsubsection{Notare}\label{notare}
+
+\begin{itemize}
+\item
+  Nota de la laborator valorează \textbf{30\%} din nota finală
+\item 
+    Nota de la laborator este compusă din două părți: Nota pe teme - 2/3 din nota de laborator (altfel spus \textbf{20\%} din nota finală) și Colocviu - 1/3 din nota de laborator (altfel spus \textbf{10\%} din nota finală)
+\item Teme
+\begin{itemize}
+    \item
+        Fiecare temă are o pondere egală la calcului notei finale pe teme - media aritmetică
+    \item
+        Fiecare temă are mai multe praguri de notare accesibile în documentul de cerințe
+\end{itemize}
+
+\item Colocviu
+\begin{itemize}
+    \item 
+        Colocviul constă într-un test de laborator de tip closed book în ultima săptămână a semestrului (W14)
+    \item 
+        Colocviul va fi susținut de fiecare student pe calculatoarele disponibile în sala de laborator (nu pe laptopuri / calculatoare personale)
+\end{itemize}
+\item Pentru a promova laboratorul și a fi acceptați în examen, trebuie să îndepliniți \textbf{ambele cerințe}:
+\begin{itemize}
+    \item Nota teme $\geq 5$
+    \item Nota colocviu $\geq\ 5$
+\end{itemize}
+
+% \item
+%   Accederea în examen e condiționată de o \textbf{medie de minim 5 la
+%   laborator}
+\end{itemize}
+
+%\subsubsection{Teme}\label{teme}
+
+\subsubsection{Predare teme}\label{predare}
+
+\begin{itemize}
+\item
+  La discuția de evaluare se vor prezenta: \textbf{codul sursă,
+  graficele} și un \textbf{exemplu de rulare}
+\item
+  \textbf{Codul sursă} (ex: program.cpp) si \textbf{graficele} trebuie
+  încărcate pe Moodle, într-o arhivă (ex: program.zip), \textbf{
+  înainte de sesiunea de laborator}
+\item
+  \textbf{Nu evaluăm} teme cu cod neindentat
+\item
+  \textbf{Nu evaluăm} teme pentru care studentul nu poate explica
+  algoritmul (algoritmii) utilizați
+\item
+  Fiecare fișier sursă trebuie să conțină la început un comentariu cu
+  următorul format:
+\end{itemize}
+
+/**
+
+* @author Ionescu Popescu
+
+* @group 30221
+
+*
+
+* Specificațiile problemei, ex: Comparați metodele de sortare X, Y
+
+*
+
+* Interpretarea personală despre complexitate (timp și spațiu), despre
+cazurile de testare (favorabil,
+
+* mediu-statistic si nefavorabil) ex: Metoda X are complexitatea Y in
+cazul Z pentru ca ..
+
+*/
+
+\subsubsection{Evaluarea complexității
+algoritmilor}\label{evaluarea-complexitux103ux21bii-algoritmilor}
+
+\begin{itemize}
+\item
+  Pentru cazul mediu-statistic, repetați măsurătorile de cel puțin 5 ori
+\item
+  Măsurați numărul de operații efectuate de algoritm (atribuiri și
+  comparații pe datele de intrare sau pe variabile auxiliare ce conțin
+  date de intrare)
+\item
+  Variați dimensiunea datelor de intrare în concordanță cu specificația
+  fiecărei teme
+\item
+  Aplicați aceleași date de intrare pe fiecare algoritm în cazul
+  evaluărilor comparative (cazul mediu statistic)
+\item
+  Generați grafice pentru evaluare (fie în \textbf{Excel} sau folosind
+  \textbf{Profiler}-ul)
+\item
+  Analizați graficele și adaugați observațiile personale în secțiunea de
+  început
+\end{itemize}
+
+\subsubsection{Termene de predare}\label{termene-de-predare}
+
+Temele pot fi predate:
+
+\begin{itemize}
+\item
+  În cadrul laboratorului în care sunt discutate. La finalul laboratorului trebuie sa încărcați pe \textbf{moodle} o versiune a temei curente (cu cat ați apucat să lucrați la ea). Lipsa unei submisii la finalul orei (sau a unei submisii cu prea puțin cod relevant) se penalizează cu pana la 2 puncte din nota pe acea tema.
+\item
+  \textbf{Extensia\_1} (E1): la începutul următorului laborator
+\item
+  \textbf{Extensia\_2} (E2): \ul{anumite} teme se pot preda la începutul
+  celui de-al doilea laborator de după cel în care a fost prezentata
+  tema (cu o \textbf{penalizare} de -2)
+\item
+  Din cel de-al treilea laborator, tema nu mai poate fi predata
+  (valorează 0)
+\end{itemize}
+
+Găsiți o planificare a temelor și a extensiilor corespunzătoare pe
+Moodle.
+
+Temele trebuie încărcate pe Moodle înainte de începutul laboratorului în care sunt predate.
+
+\subsubsection{Tentativa de fraudare}\label{tentativa-de-fraudare}
+
+Pentru prima tentativă de fraudare descoperită (copiatul codului altei persoane sau folosirea de cod generat prin unelte AI), tema respectivă se punctează cu 0 puncte. \emph{\textbf{O tentativă ulterioară de fraudare duce la recontractarea materiei anul următor}}.
+
+\subsection{Transferul între cadre
+didactice}\label{transferul-uxeentre-cadre-didactice}
+
+Dacă doriți să participați la orele de laborator cu un alt cadru
+didactic trebuie să respectați următoarea regulă:
+
+\begin{itemize}
+\item
+  Studentul S1 din grupa G1 poate să se mute in grupa G2 doar dacă găsește un student S2 din grupa G2 ce e dispus să participe la laborator cu grupa G1.
+\end{itemize}
+
+Pentru a formaliza "transferul" trebuie să trimiteți un email în care să
+precizați cu cine faceți transferul:
+
+\begin{itemize}
+\item
+  Un email de la S1 către cele două cadre didactice implicate
+\item
+  Un email de la S2 către cele două cadre didactice implicate
+\end{itemize}
+
+Termenul limita pentru "transfer" e sfârșitul \textbf{săptămânii 2} de
+scoala.
+
+\subsection{Bibliografie sugerată}\label{bibliografie-sugeratux103}
+
+\begin{itemize}
+\item
+    \href{https://drive.google.com/drive/folders/12NX3D8DLrPuU-9ffI9MjnoKUNjjftWRg?usp=sharing}{Cormen, T. H. et al (2009). Introduction to algorithms. MIT press}
+  
+\item
+    \href{https://drive.google.com/drive/folders/12NX3D8DLrPuU-9ffI9MjnoKUNjjftWRg?usp=sharing}{J. Kleinberg, E. Tardos (2005). Algorithm Design. Addison Wesley}
+\item
+  Tutoriale C/C++
+
+  \begin{itemize}
+  \item
+    \href{http://www.cprogramming.com/begin.html}{\ul{http://www.cprogramming.com/begin.html}}
+  \item
+    \href{http://www.learn-c.org}{\ul{http://www.learn-c.org}}
+  \item
+    Accelerated C++: Practical Programming by Example
+  \end{itemize}
+\item
+  Ghiduri de stil
+
+  \begin{itemize}
+  \item
+    \href{http://users.ece.cmu.edu/~eno/coding/CCodingStandard.html}{\ul{http://users.ece.cmu.edu/\textasciitilde eno/coding/CCodingStandard.html}}
+  \item
+    \href{http://www.cs.swarthmore.edu/~newhall/unixhelp/c_codestyle.html}{\ul{http://www.cs.swarthmore.edu/\textasciitilde newhall/unixhelp/c\_codestyle.html}}
+  \item
+    \href{http://google-styleguide.googlecode.com/svn/trunk/cppguide.xml}{\ul{http://google-styleguide.googlecode.com/svn/trunk/cppguide.xml}}
+  \end{itemize}
+\end{itemize}
+
+\subsection{\texorpdfstring{\textbf{Profiler}}{Profiler}}\label{profiler}
+Biblioteca care se va utiliza pentru generarea graficelor, fiecare student va trebui sa parcurgă exemplul și tutorialul dat.
+\\\\
+Cea mai recentă versiune se găseste aici: 
+
+https://github.com/cypryoprisa/utcn-fa-profiler
+\\\\
+Profiler Tutorial:
+
+- \href{https://youtu.be/iE4FFwdncDk}{Part 1}
+
+- \href{https://youtu.be/vMhwBXEelSA}{Part 2}
+
+- \href{https://youtu.be/ZOztj7aPWs4}{Part 3}
+
+
+
+
+\end{document}
