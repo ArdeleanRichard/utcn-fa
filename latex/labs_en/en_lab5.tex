@@ -1,0 +1,256 @@
+\documentclass[../en-fa-lab.tex]{subfiles}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{caption}
+
+\usepackage{hyperref}
+
+\hypersetup{
+    pdftitle={(EN) L5 - Hash tables},   % The title shown in the browser tab
+    pdfauthor={},         % Your name or organization
+    pdfsubject={},   % A brief description
+    pdfkeywords={}
+}
+
+\begin{document}
+
+\section{\texorpdfstring{\textbf{Assignment No. 5: Search Operation in Hash Tables}}{Assignment No. 5: Search Operation in Hash Tables}}\label{assign5}
+
+
+\textbf{Open Addressing with Quadratic Probing}
+
+\textbf{Allocated time:} 2 hours
+
+\subsection{Implementation}\label{implementation}
+
+You are required to implement \textbf{correctly} and
+\textbf{efficiently} the \emph{insert} and \emph{search} operations in a
+hash table using \emph{open addressing} and \emph{quadratic probing}.
+
+You may find relevant information and pseudo-code in your course notes,
+or in the book (\cite{cormen}), in section \emph{11.4 Open addressing}.
+
+The notions of closed/open specify whether you are compelled to use a
+certain position or a data structure.
+
+\subsubsection{Hashing (refers to the hash
+table)}\label{hashing-refers-to-the-hash-table}
+
+\begin{itemize}
+\item
+  Open Hashing
+
+  \begin{itemize}
+  \item
+    Free to leave the hash table to hold more elements at
+    a certain index (e.g. chaining)
+  \end{itemize}
+\item
+  Closed Hashing
+
+  \begin{itemize}
+  \item
+    Not more than one element can be stored at a certain
+    index (e.g. linear/quadratic probing)
+  \end{itemize}
+\end{itemize}
+
+\subsubsection{Addressing (refers to the final position of the element with
+respect to its initial
+position)}\label{addressing-refers-to-the-final-position-of-the-element-with-respect-to-its-initial-position}
+
+\begin{itemize}
+\item
+  Open Addressing
+
+  \begin{itemize}
+  \item
+    The final address is not completely determined by the
+    hash code, it also depends on the elements which are already in the
+    hash table (e.g. linear/quadratic probing)
+  \end{itemize}
+\item
+  Closed Addressing
+
+  \begin{itemize}
+  \item
+    The final address is always the one initially
+    calculated (there is no probing, e.g. chaining)
+  \end{itemize}
+\end{itemize}
+
+\textsubscript{\hfill\break
+}
+
+For the purpose of this assignment, the hash table will
+not contain integers, but a custom data structure defined as follows:
+
+
+
+\begin{verbatim}
+typedef struct {
+    int  id;
+    char name[30];
+} Entry;
+\end{verbatim}
+
+
+The \emph{position} of each Entry in the Hash Table will be calculated
+by applying the required hash function on the \emph{id} member of the
+struct. The \emph{name} member of the struct will be used only to
+exemplify the correctness of the search and delete operations and is not
+needed when evaluating the performance (i.e., the \emph{name} member
+will be printed to the console if the search operation finds the
+\emph{id}, otherwise print ``not found'').
+
+\subsection{Minimal requirements for
+grading}\label{minimal-requirements-for-grading}
+
+\begin{itemize}
+\item
+  Interpret the chart and write your observations in the header (block
+  comments) section at the beginning of your \emph{main.cpp} file.
+\end{itemize}
+
+\begin{itemize}
+\item
+  Prepare a demo for each algorithm implemented.
+\item
+  We do not accept assignments without code indentation and with code
+  not organized in functions (for example where the entire code is in
+  the main function).
+\item
+  \emph{\textbf{The points from the requirements correspond to a correct
+  and complete solution, quality of interpretation from the block
+  comment and the correct answer to the questions from the teacher.}}
+\end{itemize}
+
+\subsection{Requirements}\label{requirements}
+
+\subsubsection{Implementation of the insert and search operations using the
+required data structure
+(5p)}\label{implementation-of-the-insert-and-search-operations-using-the-required-data-structure-5p}
+
+You will have to prove your algorithm(s) work on a small-sized input
+\emph{(ex. 10)}.
+
+\subsubsection{Evaluate the search operation for a single fill factor 95\%
+(2p)}\label{evaluate-the-search-operation-for-a-single-fill-factor-95-2p}
+
+\textbf{!} Before you start to work on the algorithms evaluation code,
+make sure you have a correct algorithm!
+
+You are required to evaluate the \emph{search} operation for hash tables
+using open addressing and quadratic probing, in the \textbf{average
+case} (remember to perform 5 runs for this). You will do this in the
+following manner:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  Select \emph{N}, the size of your hash table, as a prime number around
+  10000 (e.g., 9973, or 10007);
+\item
+  For each of several values for the filling factor \textbf{\emph{$\alpha$} =0.95} do:
+
+  \begin{enumerate}
+  \def\labelenumii{\alph{enumii}.}
+  \item
+    Insert n random elements, such that you reach the required value for
+    \emph{$\alpha$} (\emph{$\alpha$ = n/N})
+  \item
+    Search, in each case, \emph{m} random elements (\emph{m}
+    \textasciitilde{} 3000), such that approximately half of the
+    searched elements will be \emph{found} in the table, and the rest
+    will \emph{not} be \emph{found} (in the table). \emph{Make sure that
+    you sample uniformly the elements in the found category, i.e., you
+    should search elements which have been inserted at different moments
+    with equal probability (there are several ways in which you could
+    ensure this -- it is up to you to figure this out)}
+  \item
+    Count the operations performed by the search procedure (i.e., the
+    number of cells accessed during the search)
+  \item
+    Pay attention to the values that you search for, they should be in
+    random order of introduction. \emph{If you look for the first 1500
+    values introduced in the table, implicitly the average found effort
+    will be 1.}
+  \end{enumerate}
+\item
+  Output a table in the following form:
+\end{enumerate}
+
+\begin{table}[ht]
+  \centering
+  \caption{Effort measurements at various filling factors}
+  \label{tbl:effort-vs-filling}
+  \begin{tabularx}{\textwidth}{%
+      >{\centering\arraybackslash}X
+      >{\centering\arraybackslash}X
+      >{\centering\arraybackslash}X
+      >{\centering\arraybackslash}X
+      >{\centering\arraybackslash}X
+    }
+    \toprule
+    \textbf{Filling factor}
+      & \textbf{Avg. Effort \emph{(found)}}
+      & \textbf{Max Effort \emph{(found)}}
+      & \textbf{Avg. Effort \emph{(not-found)}}
+      & \textbf{Max Effort \emph{(not-found)}} \\
+    \midrule
+    0.95 & … & … & … & … \\
+    % add more rows here as needed
+    \bottomrule
+  \end{tabularx}
+\end{table}
+
+\emph{Avg. Effort = total\_effort / no\_elements}
+
+\emph{Max. Effort = maximum number of accesses performed by one search
+operation}
+
+\subsubsection{Complete evaluation for all fill factors
+(2p)}\label{complete-evaluation-for-all-fill-factors-2p}
+
+Respecting the requirements of point 2 with \emph{$\alpha$} $\in$ \{0.8, 0.85, 0.9, 0.95, 0.99\}, output a table in the following form:
+
+\begin{table}[ht]
+  \centering
+  \caption{Effort measurements at various filling factors}
+  \label{tbl:effort-vs-filling-extended}
+  \begin{tabularx}{\textwidth}{%
+      >{\centering\arraybackslash}X
+      >{\centering\arraybackslash}X
+      >{\centering\arraybackslash}X
+      >{\centering\arraybackslash}X
+      >{\centering\arraybackslash}X
+    }
+    \toprule
+    \textbf{Filling factor}
+      & \textbf{Avg. Effort \emph{(found)}}
+      & \textbf{Max Effort \emph{(found)}}
+      & \textbf{Avg. Effort \emph{(not-found)}}
+      & \textbf{Max Effort \emph{(not-found)}} \\
+    \midrule
+    0.80  &     &     &     &     \\
+    0.85  &     &     &     &     \\
+    …     & …   &     & …   &     \\
+    \bottomrule
+  \end{tabularx}
+\end{table}
+
+\subsubsection{\texorpdfstring{Implement delete operation in a hash table,
+\emph{demo (size 10)} and evaluation of the search operation after
+deletion of some elements
+(1p)}{Implement delete operation in a hash table, demo (size 10) and evaluation of the search operation after deletion of some elements (1p)}}\label{implement-delete-operation-in-a-hash-table-demo-size-10-and-evaluation-of-the-search-operation-after-deletion-of-some-elements-1p}
+
+For the evaluation of the search operation after deletion, fill the hash
+table until a fill factor of 0.99. Delete elements from the table until
+you get a filling factor of 0.8 and afterwards search m random elements
+(m \textasciitilde{} 3000) such that approximately half of the searched
+elements will be \emph{found} in the table, and the rest will \emph{not be found} (in the table)\emph{.} Count the operations performed by the \emph{search} and add it in the previous table.
+
+
+\printbibliography
+
+\end{document}

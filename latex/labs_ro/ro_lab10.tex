@@ -1,0 +1,99 @@
+\documentclass[../ro-fa-lab.tex]{subfiles}
+\usepackage{hyperref}
+\hypersetup{
+    pdftitle={(RO) L10 - DFS},   % The title shown in the browser tab
+    pdfauthor={},         % Your name or organization
+    pdfsubject={},   % A brief description
+    pdfkeywords={}
+}
+
+\begin{document}
+
+
+\section{\texorpdfstring{\textbf{Tema Nr. 10: Căutare în adâncime (DFS)}}{Tema Nr. 10: Căutare în adâncime (DFS)}}\label{assign9}
+
+\textbf{Tema Nr. 10: Căutare în adâncime (DFS)}
+
+\textbf{Timp Alocat}: 2 ore
+
+\subsection{Implementare}\label{implementare}
+
+Se cere implementarea corectă și eficientă a algoritmului de căutare în
+adâncime (Depth-First Search - DFS) (\emph{Capitolul
+22.3 din \cite{cormen}}). Pentru reprezentarea grafurilor, va trebui să
+folosești liste de adiacență. De asemenea, va trebui să:
+
+\begin{itemize}
+\item
+  Implementarea algoritmului Tarjan pentru componente tare conexe
+\item
+  Implementezi sortarea topologică (\emph{Capitolul
+  22.4} din \emph{\cite{cormen}})
+\end{itemize}
+
+\subsection{Cerințe}\label{cerinux21be}
+
+\subsubsection{DFS (5p)}\label{dfs-5p}
+
+Demonstrați corectitudinea algoritmului pe un graf de dimensiune mică:
+
+\begin{itemize}
+\item
+  afișați graful inițial (liste de adiacență)
+\item
+  afișați arborele rezultat în urma DFS
+\end{itemize}
+
+\subsubsection{Sortare topologică (1p)}\label{sortare-topologicux103-1p}
+
+Demonstrați corectitudinea algoritmului pe un graf de dimensiune mică:
+
+\begin{itemize}
+\item
+  afișați graful inițial (liste de adiacență)
+\item
+  afișați listă de noduri sortate topologic (dacă are / dacă nu are de
+  ce nu are?)
+\end{itemize}
+
+\subsubsection{Tarjan (2p)}\label{tarjan-2p}
+
+Demonstrați corectitudinea algoritmului pe un graf de dimensiune mică:
+
+\begin{itemize}
+\item
+  afișați graful inițial (liste de adiacență)
+\item
+  afișați componentele puternic conexe ale grafului
+\end{itemize}
+
+\subsubsection{Analiza performanței pentru DFS
+(2p)}\label{analiza-performanux21bei-pentru-dfs-2p}
+
+\textbf{!} Înainte de a începe să lucrați la partea de evaluare,
+asigurați-vă că aveți un algoritm corect!
+
+Cum timpul de execuție al algoritmului DFS variază în funcție de numărul
+de vârfuri (\textbar V\textbar) și de numărul de muchii
+(\textbar E\textbar) aveți de făcut următoarele analize:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  Fixați \textbar V\textbar=100 și variați \textbar E\textbar{} între
+  1000 și 4500 cu un pas de 100. Generați pentru fiecare caz un graf
+  aleator și asigurați-vă că nu generați aceeași muchie de 2 ori.
+  Execută DFS pentru fiecare graf generat și numără operațiile
+  efectuate. Apoi construiește graficul cu variația numărului de
+  operații în funcție de \textbar E\textbar;
+\item
+  Fixați \textbar E\textbar=4500 și variați \textbar V\textbar{} între
+  100 și 200 cu un pas de 10. Repetă procedura de mai sus și
+  construiește graficul cu variația numărului de operații în funcție de
+  \textbar V\textbar.
+\end{enumerate}
+
+
+\printbibliography
+
+\end{document}

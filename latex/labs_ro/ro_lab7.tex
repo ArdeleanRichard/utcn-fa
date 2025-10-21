@@ -1,0 +1,147 @@
+\documentclass[../ro-fa-lab.tex]{subfiles}
+
+\usepackage{hyperref}
+\hypersetup{
+    pdftitle={(RO) L7 - Statistici dinamice de ordine},   % The title shown in the browser tab
+    pdfauthor={},         % Your name or organization
+    pdfsubject={},   % A brief description
+    pdfkeywords={}
+}
+
+\begin{document}
+
+
+\section{\texorpdfstring{\textbf{Tema Nr. 7: Statistici dinamice de ordine}}{Tema Nr. 7: Statistici dinamice de ordine}}\label{assign7}
+
+
+\textbf{Timp alocat:} 2 ore
+
+\subsection{Implementare}\label{implementare}
+
+Se cere implementarea \textbf{corectă} și \textbf{eficientă} a
+operațiilor de management ale unui \textbf{arbore de statistică de
+ordine} (\emph{capitolul 14 din \cite{cormen}}).
+
+Se cere să folosiți un \emph{arbore binar} de \emph{căutare}
+\textbf{perfect} \textbf{echilibrat}. Fiecare nod din arbore trebuie
+extins cu un câmp \emph{size} (dimensiunea sub-arborelui ce are nodul ca
+rădăcină).
+
+Operațiile de management ale unui \textbf{arbore de statistică de
+ordine}:
+
+\begin{itemize}
+\item
+  BUILD\_TREE(n)
+
+  \begin{itemize}
+  \item
+    \emph{construiește} un arbore binar de căutare \textbf{echilibrat}
+    cu cheile 1,2,...,n (\emph{hint}: \emph{divide et impera})
+  \item
+    nu uitați să inițializați câmpul \emph{size}
+  \end{itemize}
+\item
+  OS-SELECT(tree, i)
+
+  \begin{itemize}
+  \item
+    selectează elementul cu a \emph{i}-a cea mai mică cheie
+  \item
+    pseudocodul poate fi găsit la \emph{Capitolul 14.1 din
+    \cite{cormen}}
+  \end{itemize}
+\item
+  OS-DELETE(tree, i)
+
+  \begin{itemize}
+  \item
+    puteți folosi ștergerea dintr-un arbore binar de căutare, fără a
+    crește înălțimea arborelui (De ce nu trebuie să re-balansați
+    arborele?)
+  \item
+    nu uitați să păstrați câmpul \emph{size} consistent o dată cu
+    ștergerile din arbore
+  \item
+    există mai multe abordări prin care puteți modifica câmpul
+    \emph{size} fără a crește complexitatea algoritmului (găsiți cea mai
+    bună soluție)
+  \end{itemize}
+\end{itemize}
+
+Seamănă OS-SELECT cu ceva ce ați studiat în acest semestru?
+
+\subsection{Cerințe}\label{cerinux21be}
+
+\subsubsection{BUILD\_TREE: implementare corectă și eficientă
+(5p)}\label{build_tree-implementare-corectux103-ux219i-eficientux103-5p}
+
+Corectitudinea algoritmilor va trebui demonstrată pe date de intrare de
+dimensiuni mici (11)
+
+\begin{itemize}
+\item
+  afișați (cu pretty print) arborele construit inițial
+\end{itemize}
+
+\subsubsection{OS\_SELECT: implementare corectă și eficientă
+(1p)}\label{os_select-implementare-corectux103-ux219i-eficientux103-1p}
+
+Corectitudinea algoritmilor va trebui demonstrată pe date de intrare de
+dimensiuni mici (11)
+
+\begin{itemize}
+\item
+  executați OS-SELECT pentru câțiva (cel puțin 3) indecși selectați
+  aleator.
+\end{itemize}
+
+\subsubsection{OS\_DELETE: implementare corectă și eficientă
+(2p)}\label{os_delete-implementare-corectux103-ux219i-eficientux103-2p}
+
+Corectitudinea algoritmilor va trebui demonstrată pe date de intrare de
+dimensiuni mici (11)
+
+\begin{itemize}
+\item
+  executați secvența OS-SELECT urmat de OS-DELETE pentru câțiva (cel
+  puțin 3) indecși selectați aleator (3) și \emph{afișati arborele dupa
+  fiecare execuție}.
+\end{itemize}
+
+\subsubsection{Evaluarea operațiilor de management - BUILD, SELECT, DELETE
+(2p)}\label{evaluarea-operaux21biilor-de-management---build-select-delete-2p}
+
+\textbf{!} Înainte de a începe să lucrați pe partea de evaluare,
+asigurați-vă că aveți un \textbf{algoritm corect}!
+
+După ce sunteți siguri că algoritmul funcționează corect:
+
+\begin{itemize}
+\item
+  variați \emph{n} de la 100 la 10000 cu un pas de 100;
+\item
+  pentru fiecare \emph{n} (nu uitați să repetați de 5 ori)
+
+  \begin{itemize}
+  \item
+    construiți (BUILD) arborele cu elemente de la \emph{1 la n}
+  \item
+    repetați de \emph{n} ori secvența OS-SELECT urmat OS-DELETE folosind
+    un index selectat aleator dintre elementele rămase în arbore
+  \item
+    Evaluați numărul de operații necesare pentru fiecare operație de
+    management (BUILD, SELECT, DELETE \emph{-- reprezentați rezultatele
+    sub forma unui grafic cu trei serii}). Evaluați complexitatea
+    operațiilor de management ca și suma atribuirilor și a comparațiilor
+    pentru fiecare valoare a lui \emph{n}.
+  \end{itemize}
+\end{itemize}
+
+\subsubsection{Bonus: Implementarea utilizând AVL / arbori roșu și negru
+(1p)}\label{bonus-implementarea-utilizuxe2nd-avl-arbori-roux219u-ux219i-negru-1p}
+
+
+\printbibliography
+
+\end{document}

@@ -1,0 +1,248 @@
+\documentclass[../ro-fa-lab.tex]{subfiles}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{caption}
+
+
+\usepackage{hyperref}
+\hypersetup{
+    pdftitle={(RO) L5 - Tabele de dispersie},   % The title shown in the browser tab
+    pdfauthor={},         % Your name or organization
+    pdfsubject={},   % A brief description
+    pdfkeywords={}
+}
+
+\begin{document}
+
+
+\section{\texorpdfstring{\textbf{Tema Nr. 5: Căutarea în tabele de dispersie}}{Tema Nr. 5: Căutarea în tabele de dispersie}}\label{assign5}
+
+\begin{quote}
+
+\textbf{Adresare deschisă, verificare pătratică}
+\end{quote}
+
+\textbf{Timp alocat:} 2 ore
+
+\subsection{Implementare}\label{implementare}
+
+Se cere implementarea \textbf{corectă} și \textbf{eficientă} a
+operațiilor de \emph{inserare} și \emph{căutare} într-o tabelă de
+dispersie ce folosește \emph{adresarea deschisă} cu \emph{verificare
+pătratică}.
+
+Informații utile și pseudo-cod găsiți în notițele de curs sau în carte
+(\cite{cormen}), in secțiunea \emph{11.4 Open} \emph{addressing}.
+
+Noțiunile închis/deschis (closed/open) specifică dacă se obligă
+folosirea unei poziții sau structuri de date.
+
+\subsubsection{Hashing (se referă la tabela de dispersie (hash
+table))}\label{hashing-se-referux103-la-tabela-de-dispersie-hash-table}
+
+\begin{itemize}
+\item
+  \textsubscript{Open Hashing}
+
+  \begin{itemize}
+  \item
+    Pe o anumită poziție se pot stoca mai multe elemente
+    (ex: chaining)
+  \end{itemize}
+\item
+  Closed Hashing
+
+  \begin{itemize}
+  \item
+    Se poate stoca doar un singur element pe o anumita
+    pozitie (ex. linear/quadratic probing)
+  \end{itemize}
+\end{itemize}
+
+\textbf{Addressing (se referă la poziția finală a unui element față de
+poziția inițială)}
+
+\begin{itemize}
+\item
+  Open Addressing (Adresare Deschisă)
+
+  \begin{itemize}
+  \item
+    Adresa finală (poziția finală) nu este complet
+    determinată de către codul hash. Poziția depinde și de elementele
+    care sunt deja în tabelă. (ex: linear/quadratic probing - verificare
+    liniară/pătratică)
+  \end{itemize}
+\item
+  \textsubscript{Closed Addressing (Adresare Închisă)}
+
+  \begin{itemize}
+  \item
+    Adresa finală este întotdeauna determinată the codul
+    hash (poziția inițială calculată) și nu exista probing (ex:
+    chaining)
+  \end{itemize}
+\end{itemize}
+
+Pentru această temă tabela de dispersie va avea o structură similară cu
+cea de mai jos\textsubscript{:}
+
+\emph{typedef struct \{ int id; char name{[}30{]}; \} Entry;}
+
+unde \emph{adresa finală} în tabelă va fi calculată aplicând funcția de
+hashing pe câmpul \emph{id} din structură. Câmpul \emph{name} va fi
+folosit doar pentru demonstrarea corectitudinii operațiilor de căutare
+și ștergere și nu este necesară pentru evaluarea performanței (câmpul
+\emph{name} va fi afișat în consolă dacă operația de căutare găsește
+\emph{id}-ul respectiv, altfel afișați ``negăsit'').
+
+\subsection{Cerințe minimale pentru
+notare}\label{cerinux21be-minimale-pentru-notare}
+
+\begin{itemize}
+\item
+  Interpretați graficul și notați observațiile personale în antetul
+  fișierului \emph{main.cpp}, într-un comentariu bloc informativ.
+\item
+  Pregătiți un exemplu pentru exemplificarea corectitudinii fiecărui
+  algoritm implementat.
+\item
+  Nu preluăm teme care nu sunt indentate și care nu sunt organizate în
+  funcții (de exemplu nu preluam teme unde tot codul este pus in main)
+\item
+  \emph{\textbf{Punctajele din barem se dau pentru rezolvarea corectă și
+  completă a cerinței, calitatea interpretărilor din comentariul bloc și
+  răspunsul corect dat de voi la întrebările puse de către profesor.}}
+\end{itemize}
+
+\subsection{Cerințe}\label{cerinux21be}
+
+\subsubsection{\texorpdfstring{Implementarea operației de inserare și
+căutare folosind structura de date cerută + \emph{demo (dimensiune 10)}
+(5p)}{Implementarea operației de inserare și căutare folosind structura de date cerută + demo (dimensiune 10) (5p)}}\label{implementarea-operaux21biei-de-inserare-ux219i-cux103utare-folosind-structura-de-date-cerutux103-demo-dimensiune-10-5p}
+
+Corectitudinea algoritmilor va trebui demonstrată pe date de intrare de
+dimensiuni mici (ex. 10).
+
+\subsubsection{Evaluarea operației de căutare pentru un singur factor de
+umplere 95\%
+(2p)}\label{evaluarea-operaux21biei-de-cux103utare-pentru-un-singur-factor-de-umplere-95-2p}
+
+\textbf{!} Înainte de a începe să lucrați pe partea de evaluare,
+asigurați-vă că aveți un \textbf{algoritm corect}!
+
+Se cere evaluarea operației de \emph{căutare} în tabele de dispersie cu
+adresare deschisă și verificare pătratică, în cazul \textbf{mediu
+statistic} (nu uitați să repetați măsurătorile de 5 ori). Pentru a
+obține evaluarea, trebuie să:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  Alegeți \emph{N}, dimensiunea tabelei, un număr prim în jur de 10000
+  (e.g. 9973, sau 10007);
+\item
+  Pentru fiecare din următoarele valori pentru factorul de umplere
+  \textbf{$\alpha$} \textbf{= 0.95}:
+
+  \begin{enumerate}
+  \def\labelenumii{\alph{enumii}.}
+  \item
+    Inserati în tabela \emph{n} elemente aleator, astfel incat sa
+    ajungeți la valoare lui \emph{$\alpha$} (\emph{$\alpha$ =} \emph{n/N})
+  \item
+    Căutați aleator, în fiecare caz, \emph{m} elemente (\emph{m}
+    \textasciitilde{} 3000), astfel încât aproximativ jumătate din
+    elemente sa fie \emph{găsite}, iar restul sa \emph{nu fie găsite}
+    (în tabelă). \emph{Asigurați-vă că elementele găsite sunt generate
+    uniform, i.e. să căutați elemente care au fost introduse la moment
+    diferite, cu probabilitate egală (există mai multe moduri în care se
+    poate garanta acest lucru)}
+  \item
+    Numărați operațiile efectuate de procedura de căutare (i.e. numărul
+    de celule accesate)
+  \item
+    Atenție la valorile pe care le căutați, să fie într-o ordine
+    aleatoare din cele introduse. \emph{Dacă sunt primele 1500 adăugate,
+    implicit efortul mediu găsite va fi 1.}
+  \end{enumerate}
+\item
+  Generați un tabel de forma:
+\end{enumerate}
+
+\begin{table}[ht]
+  \centering
+  \caption{Effort measurements at various filling factors}
+  \label{tbl:effort-vs-filling}
+  \begin{tabularx}{\textwidth}{%
+      >{\centering\arraybackslash}X
+      >{\centering\arraybackslash}X
+      >{\centering\arraybackslash}X
+      >{\centering\arraybackslash}X
+      >{\centering\arraybackslash}X
+    }
+    \toprule
+    \textbf{Filling factor}
+      & \textbf{Avg. Effort \emph{(found)}}
+      & \textbf{Max Effort \emph{(found)}}
+      & \textbf{Avg. Effort \emph{(not-found)}}
+      & \textbf{Max Effort \emph{(not-found)}} \\
+    \midrule
+    0.95 & … & … & … & … \\
+    % add more rows here as needed
+    \bottomrule
+  \end{tabularx}
+\end{table}
+
+\emph{Efort mediu = efort\_total / nr\_elemente}
+
+\emph{Efort maxim = număr maxim de accese efectuat de o operație de
+căutare}
+
+\subsubsection{Completarea evaluării pentru toți factorii de umplere
+(2p)}\label{completarea-evaluux103rii-pentru-toux21bi-factorii-de-umplere-2p}
+
+Respectând cerințele de la punctul 2 cu \emph{$\alpha$} $\in$ \{0.8, 0.85, 0.9,
+0.95, 0.99\}, generați un tabel de forma:
+
+\begin{table}[ht]
+  \centering
+  \caption{Effort measurements at various filling factors}
+  \label{tbl:effort-vs-filling-extended}
+  \begin{tabularx}{\textwidth}{%
+      >{\centering\arraybackslash}X
+      >{\centering\arraybackslash}X
+      >{\centering\arraybackslash}X
+      >{\centering\arraybackslash}X
+      >{\centering\arraybackslash}X
+    }
+    \toprule
+    \textbf{Filling factor}
+      & \textbf{Avg. Effort \emph{(found)}}
+      & \textbf{Max Effort \emph{(found)}}
+      & \textbf{Avg. Effort \emph{(not-found)}}
+      & \textbf{Max Effort \emph{(not-found)}} \\
+    \midrule
+    0.80  &     &     &     &     \\
+    0.85  &     &     &     &     \\
+    …     & …   &     & …   &     \\
+    \bottomrule
+  \end{tabularx}
+\end{table}
+
+\subsubsection{\texorpdfstring{Implementare operației de ștergere într-o
+tabelă de dispersie, \emph{demo (dimensiune 10)} și evaluarea operației
+de căutare după ștergerea unor elemente
+(1p)}{Implementare operației de ștergere într-o tabelă de dispersie, demo (dimensiune 10) și evaluarea operației de căutare după ștergerea unor elemente (1p)}}\label{implementare-operaux21biei-de-ux219tergere-uxeentr-o-tabelux103-de-dispersie-demo-dimensiune-10-ux219i-evaluarea-operaux21biei-de-cux103utare-dupux103-ux219tergerea-unor-elemente-1p}
+
+Pentru evaluarea operației de de căutare după ștergere, umpleți tabela
+de dispersie pâna la factor de umplere 0.99. Stergeti elemente din
+tabela până ajungeți la factor umplere 0.8, după care căutați m elemente
+aleator (m \textasciitilde{} 3000), astfel incat aproximativ jumătate
+din elemente sa fie \emph{găsite}, iar restul sa nu fie găsite (în
+tabela). Măsurați efortul necesar pentru \emph{căutare} și adăugați în tabelul generat anterior.
+
+
+\printbibliography
+
+\end{document}

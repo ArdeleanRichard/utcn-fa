@@ -1,0 +1,58 @@
+\documentclass{article}
+\usepackage{graphicx} % Required for inserting images
+\usepackage{subfiles} % Optional, allows subfiles to be compiled individually
+\usepackage{lipsum} % For dummy text
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{hyperref} 
+\usepackage[normalem]{ulem} % provides \ul (underline)
+\usepackage{soul}
+\usepackage{tabularx}
+\usepackage{listings}
+\usepackage{textcomp}
+\usepackage{ifplatform}
+\usepackage[backend=biber,style=numeric]{biblatex}
+\addbibresource{\subfix{bibliography.bib}}
+
+\hypersetup{
+    pdftitle={(RO) Laborator},   % The title shown in the browser tab
+    pdfauthor={},         % Your name or organization
+    pdfsubject={},   % A brief description
+    pdfkeywords={}
+}
+
+\begin{document}
+
+
+\title{FA Laborator}
+\author{Raluca Laura Portase, Eugen-Richard Ardelean}
+\date{\today}
+\maketitle
+
+\tableofcontents
+\newpage
+
+\newcommand{\tab}{\hspace*{2em}}
+
+\clearpage\subfile{labs_ro/ro_ghid}
+\clearpage\subfile{labs_ro/ro_lab0}
+\clearpage\subfile{labs_ro/ro_lab1}
+\clearpage\subfile{labs_ro/ro_lab2}
+\clearpage\subfile{labs_ro/ro_lab3}
+\clearpage\subfile{labs_ro/ro_lab4}
+\clearpage\subfile{labs_ro/ro_lab5}
+\clearpage\subfile{labs_ro/ro_lab6}
+\clearpage\subfile{labs_ro/ro_lab7}
+\clearpage\subfile{labs_ro/ro_lab8}
+\clearpage\subfile{labs_ro/ro_lab9}
+\clearpage\subfile{labs_ro/ro_tutorial_lab9}
+\clearpage\subfile{labs_ro/ro_lab10}
+\clearpage\subfile{labs_ro/ro_tutorial_errors}
+
+\newpage
+\addcontentsline{toc}{section}{References}
+
+\printbibliography
+
+\end{document}

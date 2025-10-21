@@ -1,1 +1,5 @@
-# utcn-fa
+# Fundamental Algorithms at the Technical University of Cluj-Napoca 
+[v2.0]
+
+In this repository you can find the 
+- documentation for every laboratory session in both English and Romanian.

@@ -1,0 +1,141 @@
+\documentclass[../ro-fa-lab.tex]{subfiles}
+
+\usepackage{hyperref}
+\hypersetup{
+    pdftitle={(RO) L1 - Metode directe de sortare},   % The title shown in the browser tab
+    pdfauthor={},         % Your name or organization
+    pdfsubject={},   % A brief description
+    pdfkeywords={}
+}
+
+
+\begin{document}
+
+
+\section{\texorpdfstring{\textbf{Tema Nr. 1: Analiza și Compararea Metodelor Directe de Sortare}}{Tema Nr. 1: Analiza și Compararea Metodelor Directe de Sortare}}\label{assign1}
+
+\textbf{Timp alocat:} 2 ore
+
+\subsection{Implementare}\label{implementare}
+
+Se cere implementarea \textbf{corectă} și \textbf{eficientă} a 3 metode
+directe de sortare (\emph{Sortarea Bulelor}, \emph{Sortarea prin
+Inserție} -- folosind inserție liniară sau binară, și \emph{Sortarea
+prin Selecție})
+
+\begin{itemize}
+\item
+  Intrare: un șir de numere \(< a_{1},a_{2},\ldots,a_{n} >\)
+\item
+  Ieșire: o permutare ordonată a șirului de la intrare
+  \({< a}_{1}' \leq a_{2}' \leq \ldots \leq a_{n}' >\)
+\end{itemize}
+
+Toate informațiile necesare și pseudo-codul se găsesc în notițele de la
+\textbf{Seminarul nr. 1} (Sortarea prin Inserție este prezentată și în
+\textbf{carte\cite{cormen} -- secțiunea 2.1}). Să verificați că
+ați implementat varianta eficientă pentru fiecare din algoritmii de
+sortare (dacă mai multe versiuni au fost prezentate)
+
+\subsection{Cerințe minimale pentru
+notare}\label{cerinux21be-minimale-pentru-notare}
+
+\begin{itemize}
+\item
+  Interpretați graficul și notați observațiile personale în antetul
+  fișierului \emph{main.cpp}, într-un comentariu bloc informativ.
+\end{itemize}
+
+\begin{itemize}
+\item
+  Pregatiti un exemplu pentru exemplificarea corectitudinii fiecărui
+  algoritm implementat
+\item
+  Nu preluăm teme care nu sunt indentate și care nu sunt organizate în
+  funcții (de exemplu nu preluam teme unde tot codul este pus in main)
+\item
+  \emph{\textbf{Punctajele din barem se dau pentru rezolvarea corectă și
+  completă a cerinței, calitatea interpretărilor din comentariul bloc și
+  răspunsul corect dat de voi la întrebările puse de către profesor.}}
+\end{itemize}
+
+\subsection{Cerințe}\label{cerinux21be}
+
+\subsubsection{Implementarea metodelor de sortare
+(5.5p)}\label{implementarea-metodelor-de-sortare-5.5p}
+
+\begin{itemize}
+\item
+  Bubble sort (1.5p)
+\item
+  Insertion sort (2p)
+\item
+  Selection sort (2p)
+\end{itemize}
+
+Corectitudinea algoritmilor va trebui demonstrată pe un vector de
+dimensiuni mici (care poate să fie codat în funcția \emph{main}).
+
+\subsubsection{Analiză algoritmilor pentru caz mediu statistic (1.5p -- 0.5
+per
+algoritm)}\label{analizux103-algoritmilor-pentru-caz-mediu-statistic-1.5p-0.5-per-algoritm}
+
+\textbf{!} Înainte de a începe să lucrați pe partea de evaluare a
+complexitatii algoritmilor, asigurati-va că aveti un algoritm corect!
+
+Se cere compararea celor 3 algoritmi în cazurile: \textbf{favorabil
+(best)}, \textbf{mediu statistic (average)} și \textbf{defavorabil
+(worst)}. Pentru cazul \textbf{mediu} va trebui să repetați măsurătorile
+de \textbf{m} ori (m=5 este suficient) și să raportați media
+rezultatelor; de asemenea, pentru cazul \textbf{mediu,} asigurați-vă că
+folosiți \textbf{aceleași} date de intrare pentru cele 3 metode de
+sortare (astfel încât compararea lor să fie corectă); identificați și
+generați date de intrare pentru cazurile: \textbf{favorabil} și
+\textbf{defavorabil}, pentru toate cele 3 metode de sortare.
+
+Pașii de analiză ai metodelor de sortare pentru fiecare din cele 3
+cazuri (\textbf{favorabil, defavorabil, mediu)}:
+
+- variați dimensiunea șirului de la intrare (\emph{n}) între
+{[}100\ldots10.000{]}, cu un increment de maxim 500 (sugerăm 100).
+
+- pentru fiecare dimensiune, generati datele de intrare adecvate pentru
+metoda de sortare; rulați metoda de sortare numărând operațiile (numărul
+de atribuiri, numărul de comparații și suma lor).
+
+\begin{quote}
+\textbf{!} Doar atribuirile (=) și comparațiile (\textless, ==,
+\textgreater, !=) care se fac pe datele de intrare și pe datele
+auxiliare corespunzătoare se iau în considerare.
+\end{quote}
+
+\subsubsection{Analiză in caz favorabil și defavorabil (3p - câte 0.5p
+pentru fiecare caz a fiecărui
+algoritm)}\label{analizux103-in-caz-favorabil-ux219i-defavorabil-3p---cuxe2te-0.5p-pentru-fiecare-caz-a-fiecux103rui-algoritm}
+
+Pentru fiecare caz de analiză (\textbf{favorabil, defavorabil} si
+\textbf{mediu),} generati grafice care compara cele 3 metode de sortare;
+folosiți grafice diferite pentru numărul de atribuiri, comparații și
+suma lor. Dacă o curbă nu poate fi vizualizată corect din cauza că
+celelalte curbe au o rată mai mare de creștere (ex: o funcție liniară
+pare constantă atunci când este plasată în același grafic cu o funcție
+pătratică), atunci plasați noua curbă și pe un alt grafic. Denumiti
+adecvat graficele și curbele.
+
+Corectitudinea algoritmilor va trebui demonstrată pe un vector de
+dimensiuni mici (care poate să fie codat în funcția ''main'').
+
+\subsubsection{Bonus: Insertion sort prin inserție binară
+(0.5p)}\label{bonus-insertion-sort-prin-inserux21bie-binarux103-0.5p}
+
+Corectitudinea algoritmilor va trebui demonstrată pe un vector de
+dimensiuni mici (care poate să fie codat în funcția ''main'').
+
+Va trebui să comparați insertion sort prin inserție binară cu toți
+ceilalți algoritmi (bubble, insertion, selection) pentru toate cazurile
+(favorabil, mediu statistic, defavorabil).
+
+
+\printbibliography
+
+\end{document}

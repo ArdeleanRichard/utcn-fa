@@ -1,0 +1,139 @@
+\documentclass[../en-fa-lab.tex]{subfiles}
+
+\usepackage{hyperref}
+\hypersetup{
+    pdftitle={(EN) L1 - Direct sorting methods},   % The title shown in the browser tab
+    pdfauthor={},         % Your name or organization
+    pdfsubject={},   % A brief description
+    pdfkeywords={}
+}
+
+\begin{document}
+
+
+\section{\texorpdfstring{\textbf{Assignment No. 1: Analysis \& Comparison of Direct Sorting
+Methods}}{Assignment No. 1: Analysis \& Comparison of Direct Sorting
+Methods}}\label{assign1}
+
+\textbf{Allocated time:} 2 hours
+
+\subsection{Implementation}\label{implementation}
+
+You are required to implement \textbf{correctly} and
+\textbf{efficiently} 3 direct sorting methods (\emph{Bubble Sort},
+\emph{Insertion Sort} -- using either linear or binary insertion and
+\emph{Selection Sort})
+
+\begin{itemize}
+\item
+  Input: sequence of numbers \(< a_{1},\ a_{2},\ \ldots,\ a_{n} >\)
+\item
+  Output: an ordered permutation of the input sequence
+  \({< a}_{1}' \leq a_{2}' \leq \ldots \leq a_{n}' >\)
+\end{itemize}
+
+You may find any necessary information and pseudo-code in the
+\textbf{Seminar no. 1 notes} (Insertion Sort is also presented in the
+\textbf{book\cite{cormen}-- Section 2.1}). Make sure that you
+implement the efficient version for each of the required sorting methods
+(if more than one version has been provided to you).
+
+\textbf{Minimal requirements for grading}
+
+\begin{itemize}
+\item
+  Interpret the chart and write your observations in the header (block
+  comments) section at the beginning of your \emph{main.cpp} file.
+\end{itemize}
+
+\begin{itemize}
+\item
+  Prepare a demo for each algorithm implemented.
+\item
+  We do not accept assignments without code indentation and with code
+  not organized in functions (for example where the entire code is in
+  the main function).
+\item
+  \emph{\textbf{The points from the requirements correspond to a correct
+  and complete solution, quality of interpretation from the block
+  comment and the correct answer to the questions from the teacher.}}
+\end{itemize}
+
+\subsection{Requirements}\label{requirements}
+
+\subsubsection{Implementation of direct sorting method
+(5.5p)}\label{implementation-of-direct-sorting-method-5.5p}
+
+\begin{itemize}
+\item
+  Bubble sort (1.5p)
+\item
+  Insertion sort (2p)
+\item
+  Selection sort (2p)
+\end{itemize}
+
+You will have to prove your algorithm(s) work, so you should also
+prepare a demo on a small-sized input (which may be hard-coded in your
+\emph{main} function).
+
+\subsubsection{Evaluate algorithms for the average case (1.5p -- 0.5p for
+each
+algorithm)}\label{evaluate-algorithms-for-the-average-case-1.5p-0.5p-for-each-algorithm}
+
+\textbf{!} Before you start to work on the algorithms evaluation code,
+make sure you have a correct algorithm!
+
+You are required to compare the three sorting algorithms, in the
+\textbf{best}, \textbf{average} and \textbf{worst} cases. Remember that
+for the \textbf{average} case you have to repeat the measurements
+\textbf{m} times (m=5 should suffice) and report their average; also,
+for the \textbf{average} case, make sure you always use the
+\textbf{same} input sequence for all three sorting methods. To make the
+comparison fair, make sure you know how to generate the
+\textbf{best/worst} case input sequences for all three methods.
+
+This is how the analysis should be performed for a sorting method, in
+any of the three cases (\textbf{best}, \textbf{average} and
+\textbf{worst}):
+
+- vary the dimension of the input array (\emph{n}) between
+{[}100\ldots10000{]}, with an increment of maximum 500 (we suggest 100).
+
+- for each dimension, generate the appropriate input sequence for the
+sorting method; run the sorting method counting the operations (i.e.,
+number of assignments, number of comparisons and their sum).
+
+\begin{quote}
+\textbf{!} Only the assignments (=) and comparisons (\textless, ==,
+\textgreater, !=) which are performed on the input structure and its
+corresponding auxiliary variables matter.
+\end{quote}
+
+\subsubsection{Evaluate algorithm for best and worst case (3p - 0.5p for
+each case of each
+algorithm)}\label{evaluate-algorithm-for-best-and-worst-case-3p---0.5p-for-each-case-of-each-algorithm}
+
+For each analysis case (\textbf{best}, \textbf{average,} and
+\textbf{worst}), generate charts which compare the three methods; use
+different charts for the number of comparisons, number of assignments
+and total number of operations. If one of the curves cannot be
+visualized correctly because the others have a larger growth rate (e.g.,
+a linear function might seem constant when placed on the same chart with
+a quadratic function), place that curve on a separate chart as well.
+Name your charts and the curves on each chart appropriately.
+
+\subsubsection{Bonus: Binary insertion sort
+(0.5p)}\label{bonus-binary-insertion-sort-0.5p}
+
+You will have to prove your algorithm(s) work, so you should also
+prepare a demo on a small-sized input (which may be hard-coded in your
+main function).
+
+You will have to compare binary insertion sort against all other sorting
+methods (bubble, insertion, selection) on all cases (best, average,
+worst).
+
+\printbibliography
+
+\end{document}
