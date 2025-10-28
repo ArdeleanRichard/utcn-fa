@@ -42,40 +42,42 @@ your course notes, or in the book\cite{cormen}:
   \emph{Randomized-Select}: chapter 9
 \end{itemize}
 
-\subsection{Minimal requirements for
-grading}\label{minimal-requirements-for-grading}
+
+
+
+
+\subsection{Minimal requirements for grading}\label{minimal-requirements-for-grading}
+
+The lack of any of the minimum requirements (even partially) may result in a lower grade through penalties or refusal to accept the assignment resulting in a grade of 0.
 
 \begin{itemize}
+\item
+  \emph{Demo}: Prepare a demonstration of correctness for each algorithm implemented. The correctness of each algorithm is demonstrated through a simple example (maximum 10 values).
+\item
+  The charts created must be easy to evaluate as in grouped and added through the Profiler functions as specified by the assignment requirements. The assignment will not be evaluated if it contains a plethora of ungrouped charts. For example, the comparative analysis implies the grouping of the compared algorithms.
 \item
   Interpret the chart and write your observations in the header (block
   comments) section at the beginning of your \emph{main.cpp} file.
-\end{itemize}
-
-\begin{itemize}
-\item
-  Prepare a demo for each algorithm implemented.
 \item
   We do not accept assignments without code indentation and with code
   not organized in functions (for example where the entire code is in
   the main function).
 \item
-  \emph{\textbf{The points from the requirements correspond to a correct
+  \emph{The points from the requirements correspond to a correct
   and complete solution, quality of interpretation from the block
-  comment and the correct answer to the questions from the teacher.}}
+  comment and \textbf{the correct answer to the questions from the teacher.}}
 \end{itemize}
+
+
 
 \subsection{Requirements}\label{requirements}
 
-\subsubsection{QuickSort: implementation
-(2p)}\label{quicksort-implementation-2p}
+\subsubsection{QuickSort: implementation (2p)}\label{quicksort-implementation-2p}
 
-You will have to prove your algorithm(s) work on a small-sized input.
+\emph{Demo}: You will have to prove your algorithm(s) work on a small-sized input.
 
 \subsubsection{QuickSort: average, best and worst case analysis
 (3p)}\label{quicksort-average-best-and-worst-case-analysis-3p}
-
-\textbf{!} Before you start to work on the algorithms evaluation code,
-make sure you have a \textbf{correct algorithm}!
 
 This is how the analysis should be performed:
 
@@ -111,11 +113,9 @@ Name the chart and curves appropriately.
 \subsubsection{Implementation of quicksort hybridization
 (1p)}\label{implementation-of-quicksort-hybridization-1p}
 
-You will have to prove your algorithm(s) work on a small-sized input.
+\emph{Demo}: You will have to prove your algorithm(s) work on a small-sized input.
 
-\subsubsection{Determination of an optimal threshold used in hybridization
-+ proof (graphics/ measurements)
-(1p)}\label{determination-of-an-optimal-threshold-used-in-hybridization-proof-graphics-measurements-1p}
+\subsubsection{Determination of an optimal threshold used in hybridization from the perspective of the number of operations and runtime + proof (1p)}\label{determination-of-an-optimal-threshold-used-in-hybridization-proof-graphics-measurements-1p}
 
 You should vary the threshold value of quicksort hybridization for which
 insertion sort is applied.
@@ -129,20 +129,39 @@ The number of tests (nr\_tests from the example) has to be chosen based
 on your processor and the compile mode used. We suggest bigger values
 such as 100 or 1000.
 
+
+
 \subsubsection{\texorpdfstring{Comparative analysis (between
 \emph{quicksort and quicksort hibridization}) from the operations and
 runtime perspective
-(1p)}{Comparative analysis (between quicksort and quicksort hibridization) from the operations and runtime perspective (1p)}}\label{comparative-analysis-between-quicksort-and-quicksort-hibridization-from-the-operations-and-runtime-perspective-1p}
-
-\textbf{!} Before you start to work on the algorithm's evaluation code,
-make sure you have a correct algorithm!
+(1p)}{Comparative analysis (between quicksort and quicksort hibridization) from the perspective of the number of operations and runtime (1p)}}\label{comparative-analysis-between-quicksort-and-quicksort-hibridization-from-the-operations-and-runtime-perspective-1p}
 
 For quicksort hybridization, you have to use the iterative insertion
 sort from the first assignment if the size of the vector is small (we
-suggest using insertion sort if the vector has less than 30 elements).
+suggest using insertion sort if the vector has less than 30 elements
+- but it is mandatory to find the adequate value through the analysis).
 Compare \emph{runtime and the number of operations} (assignments +
 comparisons) for quicksort implemented in the third assignment with the
 hybrid one.
+
+
+
+\subsubsection{Bonus: QuickSelect - Randomized-Select (0.5p)}\label{bonus-quickselect---randomized-select-0.5p}
+
+\emph{Demo}: You will have to prove your algorithm(s) work on a small-sized input.
+
+For QuickSelect (Randomized-Select) no explicit complexity analysis
+needs to be performed, only the correctness needs to be demonstrated on
+sample inputs.
+
+
+\subsection{Additional information}\label{additional-information}
+
+\begin{quote}
+\textbf{!} Only the assignments (=) and comparisons (\textless, ==,
+\textgreater, !=) which are performed on the input structure and its
+corresponding auxiliary variables matter.
+\end{quote}
 
 For measuring the runtime you can use Profiler similar to the example
 below.
@@ -159,19 +178,18 @@ below.
 \emph{profiler.stopTimer("your\_function", current\_size);}
 \\
 
+
+The number of tests (\emph{nr\_tests} from the above example) has to be
+chosen based on your processor and the compile mode used. We suggest
+bigger values such as 100 or 1000.
+
+
 When you are measuring the execution time, make sure all the processes
 that are not critical are stopped.
 
-\emph{Observation}. To evaluate the time as accurately as possible, the Profiler will not count the operations. Therefore, the evaluation of time and of operations must be done separately.
-
-\subsubsection{Bonus: QuickSelect - Randomized-Select
-(0.5p)}\label{bonus-quickselect---randomized-select-0.5p}
-
-You will have to prove your algorithm(s) work on a small-sized input.
-
-For QuickSelect (Randomized-Select) no explicit complexity analysis
-needs to be performed, only the correctness needs to be demonstrated on
-sample inputs.
+\begin{quote}
+\textbf{!} \emph{Observation}. To evaluate the time as accurately as possible, the Profiler will not count the operations. Therefore, the evaluation of time and of operations must be done separately.
+\end{quote}
 
 
 \printbibliography

@@ -37,27 +37,30 @@ your course notes, or in the book\cite{cormen}:
   problem 6-1 (Building a heap using insertion)
 \end{itemize}
 
-\subsection{Minimal requirements for
-grading}\label{minimal-requirements-for-grading}
+\subsection{Minimal requirements for grading}\label{minimal-requirements-for-grading}
+
+The lack of any of the minimum requirements (even partially) may result in a lower grade through penalties or refusal to accept the assignment resulting in a grade of 0.
 
 \begin{itemize}
+\item
+  \emph{Demo}: Prepare a demonstration of correctness for each algorithm implemented. The correctness of each algorithm is demonstrated through a simple example (maximum 10 values).
+\item
+  The charts created must be easy to evaluate as in grouped and added through the Profiler functions as specified by the assignment requirements. The assignment will not be evaluated if it contains a plethora of ungrouped charts. For example, the comparative analysis implies the grouping of the compared algorithms.
 \item
   Interpret the chart and write your observations in the header (block
   comments) section at the beginning of your \emph{main.cpp} file.
-\end{itemize}
-
-\begin{itemize}
-\item
-  Prepare a demo for each algorithm implemented.
 \item
   We do not accept assignments without code indentation and with code
   not organized in functions (for example where the entire code is in
   the main function).
 \item
-  \emph{\textbf{The points from the requirements correspond to a correct
+  \emph{The points from the requirements correspond to a correct
   and complete solution, quality of interpretation from the block
-  comment and the correct answer to the questions from the teacher.}}
+  comment and \textbf{the correct answer to the questions from the teacher.}}
 \end{itemize}
+
+
+
 
 \subsection{Requirements}\label{requirements}
 
@@ -67,7 +70,7 @@ sorting algorithms from L1 (you choose) in \emph{iterative} vs
 \emph{\ul{number of operations} and the \ul{runtime}}
 (2p)}{Comparative analysis of one of the sorting algorithms from L1 (you choose) in iterative vs recursive version. The analysis should be performed based on the number of operations and the runtime (2p)}}\label{comparative-analysis-of-one-of-the-sorting-algorithms-from-l1-you-choose-in-iterative-vs-recursive-version.-the-analysis-should-be-performed-based-on-the-number-of-operations-and-the-runtime-2p}
 
-You will have to prove your algorithm(s) work on a small-sized input.
+\emph{Demo}: You will have to prove your algorithm(s) work on a small-sized input.
 
 For the comparative analysis of the iterative vs recursive version, pick
 one of the 3 algorithms from Assignment 1 (bubble sort, insertion, or
@@ -79,46 +82,21 @@ You must measure the total effort and the running time of the two
 versions (iterative and recursive) =\textgreater{} two charts, each of
 them comparing the two versions of the algorithm.
 
-For measuring the runtime, you can use Profiler similar to the example
-below. 
-\\
-
-\emph{profiler.startTimer("your\_function", current\_size);}
-
-\emph{for(int test=0; test\textless nr\_tests; ++test) \{}
-
-\quad\emph{your\_function(array, current\_size);}
-
-\emph{\}}
-
-\emph{profiler.stopTimer("your\_function", current\_size);}
-\\
-
-The number of tests (\emph{nr\_tests} from the above example) has to be
-chosen based on your processor and the compile mode used. We suggest
-bigger values such as 100 or 1000.
-
-When you are measuring the execution time, make sure all the processes
-that are not critical are stopped.
-
 \emph{Observation}. To evaluate the time as accurately as possible, the Profiler will not count the operations. Therefore, the evaluation of time and of operations must be done separately.
 
 \subsubsection{Implement bottom­up build heap procedure
 (2p)}\label{implement-bottomup-build-heap-procedure-2p}
 
-You will have to prove your algorithm(s) work on a small-sized input.
+\emph{Demo}: You will have to prove your algorithm(s) work on a small-sized input.
 
 \subsubsection{Implement top­down build heap procedure
 (2p)}\label{implement-topdown-build-heap-procedure-2p}
 
-You will have to prove your algorithm(s) work on a small-sized input.
+\emph{Demo}: You will have to prove your algorithm(s) work on a small-sized input.
 
 \subsubsection{Comparative analysis of the two build heap methods in the
 average case
 (2p)}\label{comparative-analysis-of-the-two-build-heap-methods-in-the-average-case-2p}
-
-\textbf{!} Before you start to work on the algorithms evaluation code,
-make sure you have a \emph{correct} algorithm!
 
 You are required to compare the two build heap procedures in the
 \textbf{average} case. Remember that for the \textbf{average} case you
@@ -136,16 +114,12 @@ This is how the analysis should be performed:
 for the method; run the method, counting the operations (assignments and
 comparisons, may be counted together for this assignment).
 
-\begin{quote}
-\textbf{!} Only the assignments and comparisons performed on the input
-structure and its corresponding auxiliary variables matter.
-
 Generate a chart which compares the two methods under the total number
 of operations, in the \textbf{average} case. If one of the curves cannot
 be visualized correctly because the other has a larger growth rate,
 place that curve on a separate chart as well. Name your chart and the
 curves on it appropriately.
-\end{quote}
+
 
 \subsubsection{Comparative analysis of the two build heap methods in the
 worst case
@@ -154,7 +128,46 @@ worst case
 \subsubsection{Implement and exemplify correctness of heapsort
 (1p)}\label{implement-and-exemplify-correctness-of-heapsort-1p}
 
-You will have to prove your algorithm(s) work on a small-sized input.
+\emph{Demo}: You will have to prove your algorithm(s) work on a small-sized input.
+
+
+
+\subsection{Additional information}\label{additional-information}
+
+\begin{quote}
+\textbf{!} Only the assignments (=) and comparisons (\textless, ==,
+\textgreater, !=) which are performed on the input structure and its
+corresponding auxiliary variables matter.
+\end{quote}
+
+For measuring the runtime you can use Profiler similar to the example
+below.
+\\
+
+\emph{profiler.startTimer("your\_function", current\_size);}
+
+\emph{for(int test=0; test\textless nr\_tests; ++test) \{}
+
+\quad\emph{your\_function(array, current\_size);}
+
+\emph{\}}
+
+\emph{profiler.stopTimer("your\_function", current\_size);}
+\\
+
+
+The number of tests (\emph{nr\_tests} from the above example) has to be
+chosen based on your processor and the compile mode used. We suggest
+bigger values such as 100 or 1000.
+
+
+When you are measuring the execution time, make sure all the processes
+that are not critical are stopped.
+
+\begin{quote}
+\textbf{!} \emph{Observation}. To evaluate the time as accurately as possible, the Profiler will not count the operations. Therefore, the evaluation of time and of operations must be done separately.
+\end{quote}
+
 
 \printbibliography
 

@@ -2,7 +2,7 @@
 
 \usepackage{hyperref}
 \hypersetup{
-    pdftitle={(RO) L4 - Interclasare k siruri},   % The title shown in the browser tab
+    pdftitle={(RO) L4 - Interclasare k liste},   % The title shown in the browser tab
     pdfauthor={},         % Your name or organization
     pdfsubject={},   % A brief description
     pdfkeywords={}
@@ -11,14 +11,14 @@
 \begin{document}
 
 
-\section{\texorpdfstring{\textbf{Tema Nr. 4: Interclasarea eficientă a k șiruri ordonate}}{Tema Nr. 4: Interclasarea eficientă a k șiruri ordonate}}\label{assign4}
+\section{\texorpdfstring{\textbf{Tema Nr. 4: Interclasarea eficientă a \emph{k} liste ordonate}}{Tema Nr. 4: Interclasarea eficientă a k liste ordonate}}\label{assign4}
 
 \textbf{Timp alocat:} 2 ore
 
 \subsection{Implementare}\label{implementare}
 
 Se cere implementarea \textbf{corectă} și \textbf{eficientă} a unei
-metode de complexitate $O(n logk)$ pentru \textbf{interclasarea a k șiruri
+metode de complexitate $O(n logk)$ pentru \textbf{interclasarea a \emph{k} liste
 sortate}. Unde n este numărul total de elemente (Sugestie: folosiți un
 heap, vezi notițele de la \emph{Seminarul al 2-lea}).
 
@@ -26,7 +26,7 @@ Cerințe de implementare:
 
 \begin{itemize}
 \item
-  Folosiți liste înlănțuite pentru a reprezenta cele \emph{k} șiruri
+  Folosiți liste înlănțuite pentru a reprezenta cele \emph{k} secvențe
   sortate și secvența de ieșire
 \end{itemize}
 
@@ -37,30 +37,34 @@ Intrare: \emph{k} șiruri de numere
 Ieșire: o permutare a reuniunii șirurilor de la intrare
 \(a_{1}' \leq a_{2}' \leq \ldots \leq a_{n}'\)
 
-\subsection{Cerințe minimale pentru
-notare}\label{cerinux21be-minimale-pentru-notare}
+
+
+
+
+\subsection{Cerințe minimale pentru notare}\label{cerinux21be-minimale-pentru-notare}
+
+Lipsa oricărei cerințe minimale (chiar și parțială) poate rezulta într-o notă mai mică prin penalizări sau refuzul de a prelua tema, rezultând în nota 0.
 
 \begin{itemize}
 \item
-  Interpretați graficul și notați observațiile personale în antetul
+  \emph{Demo}: Pregătiți un exemplu pentru exemplificarea corectitudinii fiecărui
+  algoritm implementat. Corectitudinea fiecărui algoritm se demonstrează printr-un exemplu simplu (maxim 10 valori).
+\item
+    Graficele create trebuie să fie ușor de evaluat, adică grupate și adunate prin funcțiile Profiler după cerințele temei. Tema nu va fi evaluată dacă conține o multitudine de grafice negrupate. De exemplu, analiza comparativă implică gruparea într-un singur grafic a algoritmilor comparați.
+\item
+  Interpretați graficul/graficele și notați observațiile personale în antetul
   fișierului \emph{main.cpp}, într-un comentariu bloc informativ.
-\end{itemize}
-
-\begin{itemize}
-\item
-  Pregătiți un exemplu pentru exemplificarea corectitudinii fiecărui
-  algoritm implementat.
 \item
   Nu preluăm teme care nu sunt indentate și care nu sunt organizate în
-  funcții (de exemplu nu preluam teme unde tot codul este pus in main)
+  funcții (de exemplu, nu prelăum teme unde tot codul este pus în main).
+\item
+  \emph{Punctajele din barem sunt corespondente unei rezolvări corecte și
+  complete a cerinței, calitatea interpretărilor din comentariul bloc și
+  \textbf{răspunsul corect dat de dumeavostră la întrebările puse de către profesor.}}
 \end{itemize}
 
-\begin{itemize}
-\item
-  \emph{\textbf{Punctajele din barem se dau pentru rezolvarea corectă și
-  completă a cerinței, calitatea interpretărilor din comentariul bloc și
-  răspunsul corect dat de voi la întrebările puse de către profesor.}}
-\end{itemize}
+
+
 
 \subsection{Cerințe}\label{cerinux21be}
 
@@ -70,21 +74,18 @@ elemente, unde \emph{n} și \emph{k} sunt date) și interclasarea a 2
 liste
 (5p)}{Demo pentru generarea a k liste aleatoare sortate de dimensiuni diferite (având în total n elemente, unde n și k sunt date) și interclasarea a 2 liste (5p)}}\label{demo-pentru-generarea-a-k-liste-aleatoare-sortate-de-dimensiuni-diferite-avuxe2nd-uxeen-total-n-elemente-unde-n-ux219i-k-sunt-date-ux219i-interclasarea-a-2-liste-5p}
 
-Corectitudinea algoritmului (\emph{generare și interclasare}) va trebui
-demonstrată pe date de intrare de dimensiuni mici (ex: k=4, n=20).
+\emph{Demo}: Corectitudinea algoritmului (\emph{generare și interclasare}) va trebui
+demonstrată pe date de intrare de dimensiuni mici (ex: k=4, n=20). \scalebox{0.001}{Notă: pentru exemplul de test, lista trebuie afișată în ordine inversă, adică elementele acesteia trebuie afișate în ordine descrescătoare.}
 
 \subsubsection{\texorpdfstring{Adaptare operațiilor de \emph{min-heap} pe
 structura nouă și interclasarea a k liste
 (3p)}{Adaptare operațiilor de min-heap pe structura nouă și interclasarea a k liste (3p)}}\label{adaptare-operaux21biilor-de-min-heap-pe-structura-nouux103-ux219i-interclasarea-a-k-liste-3p}
 
-Corectitudinea algoritmului (\emph{interclasare}) va trebui demonstrată
+\emph{Demo}: Corectitudinea algoritmului (\emph{interclasare}) va trebui demonstrată
 pe date de intrare de dimensiuni mici (ex: k=4, n=20).
 
 \subsubsection{Evaluarea algoritmului în cazul mediu statistic
 (2p)}\label{evaluarea-algoritmului-uxeen-cazul-mediu-statistic-2p}
-
-\textbf{!} Înainte de a începe să lucrați pe partea de evaluare,
-asigurați-vă că aveți un \textbf{algoritm corect}!
 
 Se cere analiza algoritmului în cazul \textbf{mediu statistic}. Pentru
 cazul \textbf{mediu statistic} va trebui să repetați măsurătorile de

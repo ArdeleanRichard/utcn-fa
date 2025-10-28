@@ -11,14 +11,14 @@
 
 \begin{document}
 
-\section{\texorpdfstring{\textbf{Assignment No. 4: Merge k Ordered Lists Efficiently}}{Assignment No. 4: Merge k Ordered Lists Efficiently}}\label{assign4}
+\section{\texorpdfstring{\textbf{Assignment No. 4: Merge \emph{k} Ordered Lists Efficiently}}{Assignment No. 4: Merge k Ordered Lists Efficiently}}\label{assign4}
 
 \textbf{Allocated time:} 2 hours
 
 \subsection{Implementation}\label{implementation}
 
 You are required to implement \textbf{correctly} and
-\textbf{efficiently} an O(nlogk) method for \textbf{merging k sorted
+\textbf{efficiently} an O(nlogk) method for \textbf{merging \emph{k} sorted
 sequences}, where n is the total number of elements. (Hint: use a heap,
 see \emph{Seminar no. 2} notes).
 
@@ -34,30 +34,37 @@ Input: \emph{k} lists of numbers
 \(< a_{1}^{i},a_{2}^{i},\ldots,a_{m_{i}}^{i} >\),
 \(\sum_{i = 1}^{k}m_{i} = n\)
 
-Output: a permutation of the union of the input sequences:
+Output: a permutation of the union of the input:
 \(a_{1}' \leq a_{2}' \leq \ldots \leq a_{n}'\)
 
-\subsection{Minimal requirements for
-grading}\label{minimal-requirements-for-grading}
+
+
+
+
+\subsection{Minimal requirements for grading}\label{minimal-requirements-for-grading}
+
+The lack of any of the minimum requirements (even partially) may result in a lower grade through penalties or refusal to accept the assignment resulting in a grade of 0.
 
 \begin{itemize}
+\item
+  \emph{Demo}: Prepare a demonstration of correctness for each algorithm implemented. The correctness of each algorithm is demonstrated through a simple example (maximum 10 values).
+\item
+  The charts created must be easy to evaluate as in grouped and added through the Profiler functions as specified by the assignment requirements. The assignment will not be evaluated if it contains a plethora of ungrouped charts. For example, the comparative analysis implies the grouping of the compared algorithms.
 \item
   Interpret the chart and write your observations in the header (block
   comments) section at the beginning of your \emph{main.cpp} file.
-\end{itemize}
-
-\begin{itemize}
-\item
-  Prepare a demo for each algorithm implemented.
 \item
   We do not accept assignments without code indentation and with code
   not organized in functions (for example where the entire code is in
   the main function).
 \item
-  \emph{\textbf{The points from the requirements correspond to a correct
+  \emph{The points from the requirements correspond to a correct
   and complete solution, quality of interpretation from the block
-  comment and the correct answer to the questions from the teacher.}}
+  comment and \textbf{the correct answer to the questions from the teacher.}}
 \end{itemize}
+
+
+
 
 \subsection{Requirements}\label{requirements}
 
@@ -66,21 +73,18 @@ lists (having \emph{n} elements in total, \emph{n} and \emph{k} given as
 parameters) and the merging of 2 lists
 (5p)}{Generate k randomly sized sorted lists (having n elements in total, n and k given as parameters) and the merging of 2 lists (5p)}}\label{generate-k-randomly-sized-sorted-lists-having-n-elements-in-total-n-and-k-given-as-parameters-and-the-merging-of-2-lists-5p}
 
-You will have to show your algorithm (\emph{generation and merging})
-works on a small-sized input (e.g. k=4, n=20).
+\emph{Demo}: You will have to show your algorithm (\emph{generation and merging})
+works on a small-sized input (e.g. k=4, n=20).\scalebox{0.001}{Note: for the test example, the list must be displayed in reverse order, meaning its elements must be printed in descending order.}
 
 \subsubsection{\texorpdfstring{Adapt \emph{min-heap} operations to work on
 the new structure and the merging of k lists
 (3p)}{Adapt min-heap operations to work on the new structure and the merging of k lists (3p)}}\label{adapt-min-heap-operations-to-work-on-the-new-structure-and-the-merging-of-k-lists-3p}
 
-You will have to show your algorithm (\emph{merging}) works on a
+\emph{Demo}: You will have to show your algorithm (\emph{merging}) works on a
 small-sized input (e.g. k=4, n=20).
 
 \subsubsection{Evaluation of the algorithm in average case
 (2p)}\label{evaluation-of-the-algorithm-in-average-case-2p}
-
-\textbf{!} Before you start to work on the algorithm\textquotesingle s
-evaluation code, make sure you have a correct algorithm!
 
 We will make the \textbf{average case} analysis of the algorithm.
 Remember that, in the average case, you have to repeat the measurements

@@ -16,10 +16,9 @@
 
 \section{\texorpdfstring{\textbf{Assignment No. 5: Search Operation in Hash Tables}}{Assignment No. 5: Search Operation in Hash Tables}}\label{assign5}
 
-
 \textbf{Open Addressing with Quadratic Probing}
 
-\textbf{Allocated time:} 2 hours
+\noindent\textbf{Allocated time:} 2 hours
 
 \subsection{Implementation}\label{implementation}
 
@@ -38,21 +37,11 @@ table)}\label{hashing-refers-to-the-hash-table}
 
 \begin{itemize}
 \item
-  Open Hashing
-
-  \begin{itemize}
-  \item
-    Free to leave the hash table to hold more elements at
+  Open Hashing: free to leave the hash table to hold more elements at
     a certain index (e.g. chaining)
-  \end{itemize}
 \item
-  Closed Hashing
-
-  \begin{itemize}
-  \item
-    Not more than one element can be stored at a certain
+  Closed Hashing: not more than one element can be stored at a certain
     index (e.g. linear/quadratic probing)
-  \end{itemize}
 \end{itemize}
 
 \subsubsection{Addressing (refers to the final position of the element with
@@ -61,22 +50,12 @@ position)}\label{addressing-refers-to-the-final-position-of-the-element-with-res
 
 \begin{itemize}
 \item
-  Open Addressing
-
-  \begin{itemize}
-  \item
-    The final address is not completely determined by the
+  Open Addressing: the final address is not completely determined by the
     hash code, it also depends on the elements which are already in the
     hash table (e.g. linear/quadratic probing)
-  \end{itemize}
 \item
-  Closed Addressing
-
-  \begin{itemize}
-  \item
-    The final address is always the one initially
+  Closed Addressing: the final address is always the one initially
     calculated (there is no probing, e.g. chaining)
-  \end{itemize}
 \end{itemize}
 
 \textsubscript{\hfill\break
@@ -95,7 +74,7 @@ typedef struct {
 \end{verbatim}
 
 
-The \emph{position} of each Entry in the Hash Table will be calculated
+where the \emph{position} of each Entry in the Hash Table will be calculated
 by applying the required hash function on the \emph{id} member of the
 struct. The \emph{name} member of the struct will be used only to
 exemplify the correctness of the search and delete operations and is not
@@ -103,27 +82,37 @@ needed when evaluating the performance (i.e., the \emph{name} member
 will be printed to the console if the search operation finds the
 \emph{id}, otherwise print ``not found'').
 
-\subsection{Minimal requirements for
-grading}\label{minimal-requirements-for-grading}
+
+
+
+
+
+\subsection{Minimal requirements for grading}\label{minimal-requirements-for-grading}
+
+The lack of any of the minimum requirements (even partially) may result in a lower grade through penalties or refusal to accept the assignment resulting in a grade of 0.
 
 \begin{itemize}
+\item
+  \emph{Demo}: Prepare a demonstration of correctness for each algorithm implemented. The correctness of each algorithm is demonstrated through a simple example (maximum 10 values).
+\item
+  The charts created must be easy to evaluate as in grouped and added through the Profiler functions as specified by the assignment requirements. The assignment will not be evaluated if it contains a plethora of ungrouped charts. For example, the comparative analysis implies the grouping of the compared algorithms.
 \item
   Interpret the chart and write your observations in the header (block
   comments) section at the beginning of your \emph{main.cpp} file.
-\end{itemize}
-
-\begin{itemize}
-\item
-  Prepare a demo for each algorithm implemented.
 \item
   We do not accept assignments without code indentation and with code
   not organized in functions (for example where the entire code is in
   the main function).
 \item
-  \emph{\textbf{The points from the requirements correspond to a correct
+  \emph{The points from the requirements correspond to a correct
   and complete solution, quality of interpretation from the block
-  comment and the correct answer to the questions from the teacher.}}
+  comment and \textbf{the correct answer to the questions from the teacher.}}
 \end{itemize}
+
+
+
+
+
 
 \subsection{Requirements}\label{requirements}
 
@@ -131,14 +120,11 @@ grading}\label{minimal-requirements-for-grading}
 required data structure
 (5p)}\label{implementation-of-the-insert-and-search-operations-using-the-required-data-structure-5p}
 
-You will have to prove your algorithm(s) work on a small-sized input
+\emph{Demo}: You will have to prove your algorithm(s) work on a small-sized input
 \emph{(ex. 10)}.
 
 \subsubsection{Evaluate the search operation for a single fill factor 95\%
 (2p)}\label{evaluate-the-search-operation-for-a-single-fill-factor-95-2p}
-
-\textbf{!} Before you start to work on the algorithms evaluation code,
-make sure you have a correct algorithm!
 
 You are required to evaluate the \emph{search} operation for hash tables
 using open addressing and quadratic probing, in the \textbf{average
@@ -159,8 +145,8 @@ following manner:
     Insert n random elements, such that you reach the required value for
     \emph{$\alpha$} (\emph{$\alpha$ = n/N})
   \item
-    Search, in each case, \emph{m} random elements (\emph{m}
-    \textasciitilde{} 3000), such that approximately half of the
+    Search, in each case, \emph{m} random elements ($\emph{m}=3000$), 
+    such that approximately half of the
     searched elements will be \emph{found} in the table, and the rest
     will \emph{not} be \emph{found} (in the table). \emph{Make sure that
     you sample uniformly the elements in the found category, i.e., you
@@ -242,7 +228,10 @@ Respecting the requirements of point 2 with \emph{$\alpha$} $\in$ \{0.8, 0.85, 0
 \subsubsection{\texorpdfstring{Implement delete operation in a hash table,
 \emph{demo (size 10)} and evaluation of the search operation after
 deletion of some elements
-(1p)}{Implement delete operation in a hash table, demo (size 10) and evaluation of the search operation after deletion of some elements (1p)}}\label{implement-delete-operation-in-a-hash-table-demo-size-10-and-evaluation-of-the-search-operation-after-deletion-of-some-elements-1p}
+(1p)}{Implement delete operation in a hash table and evaluation of the search operation after deletion of some elements (1p)}}\label{implement-delete-operation-in-a-hash-table-demo-size-10-and-evaluation-of-the-search-operation-after-deletion-of-some-elements-1p}
+
+\emph{Demo}: You will have to prove your algorithm(s) work on a small-sized input
+\emph{(ex. 10)}.
 
 For the evaluation of the search operation after deletion, fill the hash
 table until a fill factor of 0.99. Delete elements from the table until

@@ -41,30 +41,32 @@ sau în bibliografie}\cite{cormen}\textsubscript{:}
   (Priority queues) și problema 6-1 (Building a heap using insertion)
 \end{itemize}
 
-\subsection{Cerințe minimale pentru
-notare}\label{cerinux21be-minimale-pentru-notare}
+
+
+\subsection{Cerințe minimale pentru notare}\label{cerinux21be-minimale-pentru-notare}
+
+Lipsa oricărei cerințe minimale (chiar și parțială) poate rezulta într-o notă mai mică prin penalizări sau refuzul de a prelua tema, rezultând în nota 0.
 
 \begin{itemize}
 \item
-  Interpretați graficul și notați observațiile personale în antetul
+  \emph{Demo}: Pregătiți un exemplu pentru exemplificarea corectitudinii fiecărui
+  algoritm implementat. Corectitudinea fiecărui algoritm se demonstrează printr-un exemplu simplu (maxim 10 valori).
+\item
+    Graficele create trebuie să fie ușor de evaluat, adică grupate și adunate prin funcțiile Profiler după cerințele temei. Tema nu va fi evaluată dacă conține o multitudine de grafice negrupate. De exemplu, analiza comparativă implică gruparea într-un singur grafic a algoritmilor comparați.
+\item
+  Interpretați graficul/graficele și notați observațiile personale în antetul
   fișierului \emph{main.cpp}, într-un comentariu bloc informativ.
-\end{itemize}
-
-\begin{itemize}
-\item
-  Pregătiți un exemplu pentru exemplificarea corectitudinii fiecărui
-  algoritm implementat.
 \item
   Nu preluăm teme care nu sunt indentate și care nu sunt organizate în
-  funcții (de exemplu nu preluam teme unde tot codul este pus in main)
+  funcții (de exemplu, nu prelăum teme unde tot codul este pus în main).
+\item
+  \emph{Punctajele din barem sunt corespondente unei rezolvări corecte și
+  complete a cerinței, calitatea interpretărilor din comentariul bloc și
+  \textbf{răspunsul corect dat de dumeavostră la întrebările puse de către profesor.}}
 \end{itemize}
 
-\begin{itemize}
-\item
-  \emph{\textbf{Punctajele din barem se dau pentru rezolvarea corectă și
-  completă a cerinței, calitatea interpretărilor din comentariul bloc și
-  răspunsul corect dat de voi la întrebările puse de către profesor.}}
-\end{itemize}
+
+
 
 \subsection{Cerințe}\label{cerinux21be}
 
@@ -73,7 +75,7 @@ algoritmii de sortare din L1 (la alegere) în versiune \emph{iterativă}
 vs \emph{recursivă}. Analiza se va efectua atât din \emph{perspectiva
 \ul{numărului de operații}, cât și a \ul{timpului de rulare}}(2p)}{Analiza comparativă a unuia din algoritmii de sortare din L1 (la alegere) în versiune iterativă vs recursivă. Analiza se va efectua atât din perspectiva numărului de operații, cât și a timpului de rulare (2p)}}\label{analiza-comparativux103-a-unuia-din-algoritmii-de-sortare-din-l1-la-alegere-uxeen-versiune-iterativux103-vs-recursivux103.-analiza-se-va-efectua-atuxe2t-din-perspectiva-numux103rului-de-operaux21bii-cuxe2t-ux219i-a-timpului-de-rulare-2p}
 
-Corectitudinea algoritmului va trebui demonstrată pe date de intrare de dimensiuni mici.
+\emph{Demo}: Corectitudinea algoritmului va trebui demonstrată pe date de intrare de dimensiuni mici.
 
 Pentru analiza comparativă a versiunii iterative vs recursive, alegeți
 oricare din cei 3 algoritmi din laboratorul 1 (bubble sort, insertion
@@ -86,49 +88,21 @@ Trebuie să măsurați atât efortul total, cât și timpul de rulare al celor
 două versiuni (iterativ și recursiv) =\textgreater{} două grafice,
 fiecare comparând cele două versiuni de algoritm.
 
-Pentru a măsura timpul de execuție, puteți folosi Profiler, similar cu
-exemplul de mai jos.
-\\
-
-\emph{profiler.startTimer("your\_function", current\_size);}
-
-\emph{for(int test=0; test\textless nr\_tests; ++test) \{}
-
-\quad\emph{your\_function(array, current\_size);}
-
-\emph{\}}
-
-\emph{profiler.stopTimer("your\_function", current\_size);}
-\\
-
-
-Numărul de teste (\emph{nr\_tests} din exemplul de mai sus) trebuie ales
-în funcție de procesor și modul de compilare. Sugerăm valori mai mari,
-precum 100 sau 1000.
-
-În momentul în care măsurați timpul de execuție, asigurați-vă că opriți
-orice alte procese care nu sunt necesare.
-
-\emph{Observație}. Pentru a evalua cât mai corect timpul, Profiler nu va face numărătoarea operațiilor. Astfel, evaluarea de timp și de operații trebuie făcute separat.
-
 \subsubsection{Implementarea metodei bottom-up de construire a unui heap
 (2p)}\label{implementarea-metodei-bottom-up-de-construire-a-unui-heap-2p}
 
-Corectitudinea algoritmului va trebui demonstrată pe date de intrare de
+\emph{Demo}: Corectitudinea algoritmului va trebui demonstrată pe date de intrare de
 dimensiuni mici.
 
 \subsubsection{Implementarea metodei top-down de construire a unui heap
 (2p)}\label{implementarea-metodei-top-down-de-construire-a-unui-heap-2p}
 
-Corectitudinea algoritmului va trebui demonstrată pe date de intrare de
+\emph{Demo}: Corectitudinea algoritmului va trebui demonstrată pe date de intrare de
 dimensiuni mici.
 
 \subsubsection{Analiza comparativă a celor două metode de construire în
 cazul mediu statistic
 (2p)}\label{analiza-comparativux103-a-celor-douux103-metode-de-construire-uxeen-cazul-mediu-statistic-2p}
-
-\textbf{!} Înainte de a începe să lucrați pe partea de evaluare,
-asigurați-vă că aveți un algoritm \emph{corect}!
 
 Se cere compararea celor două metode de construcție a structurii heap
 în cazul mediu statistic. Pentru cazul mediu statistic, va trebui să
@@ -146,9 +120,6 @@ adecvate metodei de construcție; rulați metoda numărând operațiile
 elementare (atribuiri și comparații - pot fi numărate împreună pentru
 această temă).
 
-\textbf{!} Doar atribuirile și comparațiile care se fac pe datele de
-intrare și pe datele auxiliare corespunzătoare se iau în considerare.
-
 Generați un grafic ce compară cele două metode de construcție în cazul
 mediu statistic pe baza numărului de operații obținut la pasul anterior.
 Dacă o curbă nu poate fi vizualizată corect din cauza că celelalte curbe
@@ -163,8 +134,42 @@ defavorabil
 heapsort
 (1p)}\label{implementarea-ux219i-exemplificarea-corectitudinii-algoritmului-heapsort-1p}
 
-Corectitudinea algoritmului va trebui demonstrată pe date de intrare de
+\emph{Demo}: Corectitudinea algoritmului va trebui demonstrată pe date de intrare de
 dimensiuni mici.
+
+
+\subsection{Informații adiționale}\label{info}
+\begin{quote}
+\textbf{!} Doar atribuirile (=) și comparațiile (\textless, ==,
+\textgreater, !=) care se fac pe datele de intrare și pe datele
+auxiliare corespunzătoare se iau în considerare.
+\end{quote}
+
+Pentru a măsura timpul de execuție puteți folosi Profiler similar cu
+exemplul de mai jos.
+\\
+
+\emph{profiler.startTimer("your\_function", current\_size);}
+
+\emph{for(int test=0; test\textless nr\_tests; ++test) \{}
+
+\quad\emph{your\_function(array, current\_size);}
+
+\emph{\}}
+
+\emph{profiler.stopTimer("your\_function", current\_size);}
+\\
+
+Numărul de teste (\emph{nr\_tests} din exemplul de mai sus) trebuie ales
+în funcție de procesor și modul de compilare. Sugerăm valori mai mari,
+precum 100 sau 1000.
+
+În momentul în care măsurați timpul de execuție, asigurați-vă că opriți
+orice alte procese care nu sunt necesare.
+
+\begin{quote}
+\textbf{!} \emph{Observație}. Pentru a evalua cât mai corect timpul, Profiler nu va face numărătoarea operațiilor. Astfel, evaluarea de timp și de operații trebuie făcute separat.
+\end{quote}
 
 
 \printbibliography
