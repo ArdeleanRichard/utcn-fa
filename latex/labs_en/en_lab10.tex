@@ -1,6 +1,9 @@
 \documentclass[../en-fa-lab.tex]{subfiles}
 
 \usepackage{hyperref}
+\usepackage{algpseudocode}
+\usepackage{algorithm}
+\usepackage{amsmath}
 
 \hypersetup{
     pdftitle={(EN) L10 - DFS},   % The title shown in the browser tab
@@ -25,10 +28,10 @@ graph representation, you should use adjacency lists. You also have to:
 
 \begin{itemize}
 \item
+  Implement topological sorting (\emph{Chapter 22.4 from \cite{cormen}})
+\item
   Implement the Tarjan algorithm for detecting strongly connected
   components
-\item
-  Implement topological sorting (\emph{Chapter 22.4 from \cite{cormen}})
 \end{itemize}
 
 
@@ -99,6 +102,11 @@ on a smaller graph:
   print all strongly connected components of the graph
 \end{itemize}
 
+We present Tarjan's algorithm for finding strongly connected components (SCCs) in a directed graph.
+For background and more details see the Wikipedia entry:
+\href{https://en.wikipedia.org/wiki/Tarjan%27s_strongly_connected_components_algorithm}{Tarjan's strongly connected components algorithm}.
+The pseudocode can also be found \hyperref[alg:tarjan]{here}.
+
 \subsubsection{Analysis of the DFS performance
 (2p)}\label{analysis-of-the-dfs-performance-2p}
 
@@ -120,6 +128,66 @@ of operations performed; generate the corresponding chart (i.e., the variation o
   above to generate the chart which gives the variation of the number of
   operations with \textbar V\textbar.
 \end{enumerate}
+
+
+
+\begin{algorithm}
+\caption{Tarjan's strongly connected components}
+\label{alg:tarjan}
+\begin{algorithmic}[1]
+
+\Procedure{tarjan}{$G=(V,E)$}
+    \State \textbf{Input:} graph $G = (V, E)$
+    \State \textbf{Output:} set of strongly connected components (sets of vertices)
+    \State $index \gets 0$
+    \State $S \gets$ empty stack
+    \ForAll{$v \in V$}
+        \If{$v.index$ is undefined}
+            \State \Call{strongconnect}{$v$}
+        \EndIf
+    \EndFor
+\EndProcedure
+
+\Statex % <-- empty line between the two functions
+
+\Function{strongconnect}{$v$}
+    \State {\small\texttt{// Set the depth index for v to the smallest unused index}}
+    \State $v.\text{index} \gets index$
+    \State $v.\text{lowlink} \gets index$
+    \State $index \gets index + 1$
+    \State $S.push(v)$
+    \State $v.onStack \gets \text{true}$
+
+    \State {\small\texttt{// Consider successors of v}}
+    \ForAll{$(v, w) \in E$}
+        \If{$w.index$ is undefined}
+            \State {\small\texttt{// Successor w has not yet been visited; recurse on it}}
+            \State \Call{strongconnect}{$w$}
+            \State $v.\text{lowlink} \gets \min(v.\text{lowlink}, w.\text{lowlink})$
+        \ElsIf{$w.onStack$}
+            \State {\small\texttt{// Successor w is in stack S and hence in the current SCC}}
+            \State {\small\texttt{// If w is not on stack, then (v, w) is an edge pointing to an SCC already}}
+            \State {\small\texttt{// found and must be ignored}}
+            \State {\small\texttt{// See below regarding the next line}}
+            \State $v.\text{lowlink} \gets \min(v.\text{lowlink}, w.\text{index})$
+        \EndIf
+    \EndFor
+
+    \State {\small\texttt{// If v is a root node, pop the stack and generate an SCC}}
+    \If{$v.\text{lowlink} = v.\text{index}$}
+        \State start a new strongly connected component
+        \Repeat
+            \State $w \gets S.pop()$
+            \State $w.onStack \gets \text{false}$
+            \State add $w$ to current strongly connected component
+        \Until{$w = v$}
+        \State \textbf{output} the current strongly connected component
+    \EndIf
+\EndFunction
+
+\end{algorithmic}
+\end{algorithm}
+
 
 
 \printbibliography

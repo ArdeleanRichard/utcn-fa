@@ -1,5 +1,9 @@
 \documentclass[../ro-fa-lab.tex]{subfiles}
 \usepackage{hyperref}
+\usepackage{algpseudocode}
+\usepackage{algorithm}
+\usepackage{amsmath}
+
 \hypersetup{
     pdftitle={(RO) L10 - DFS},   % The title shown in the browser tab
     pdfauthor={},         % Your name or organization
@@ -25,10 +29,10 @@ folosești liste de adiacență. De asemenea, va trebui să:
 
 \begin{itemize}
 \item
-  Implementarea algoritmului Tarjan pentru componente tare conexe
-\item
-  Implementezi sortarea topologică (\emph{Capitolul
+  Implementați sortarea topologică (\emph{Capitolul
   22.4} din \emph{\cite{cormen}})
+\item
+  Implementați algoritmul Tarjan pentru componente tare conexe
 \end{itemize}
 
 
@@ -56,6 +60,9 @@ Lipsa oricărei cerințe minimale (chiar și parțială) poate rezulta într-o n
   complete a cerinței, calitatea interpretărilor din comentariul bloc și
   \textbf{răspunsul corect dat de dumeavostră la întrebările puse de către profesor.}}
 \end{itemize}
+
+
+
 
 
 
@@ -98,6 +105,15 @@ Lipsa oricărei cerințe minimale (chiar și parțială) poate rezulta într-o n
   afișați componentele puternic conexe ale grafului
 \end{itemize}
 
+Prezentăm algoritmul lui Tarjan pentru identificarea componentelor tare conexe (SCC) într-un graf orientat.
+Pentru context și mai multe detalii, consultați articolul de pe Wikipedia:
+\href{https://en.wikipedia.org/wiki/Tarjan%27s_strongly_connected_components_algorithm}{Algoritmul lui Tarjan pentru componentele tare conexe}.
+Pseudocodul poate fi găsit și \hyperref[alg:tarjan]{aici}.
+
+
+
+
+
 \subsubsection{Analiza performanței pentru DFS
 (2p)}\label{analiza-performanux21bei-pentru-dfs-2p}
 
@@ -120,6 +136,67 @@ de vârfuri (\textbar V\textbar) și de numărul de muchii
   construiește graficul cu variația numărului de operații în funcție de
   \textbar V\textbar.
 \end{enumerate}
+
+
+
+
+
+\begin{algorithm}
+\caption{Tarjan's strongly connected components}
+\label{alg:tarjan}
+\begin{algorithmic}[1]
+
+\Procedure{tarjan}{$G=(V,E)$}
+    \State \textbf{Input:} graph $G = (V, E)$
+    \State \textbf{Output:} set of strongly connected components (sets of vertices)
+    \State $index \gets 0$
+    \State $S \gets$ empty stack
+    \ForAll{$v \in V$}
+        \If{$v.index$ is undefined}
+            \State \Call{strongconnect}{$v$}
+        \EndIf
+    \EndFor
+\EndProcedure
+
+\Statex % <-- empty line between the two functions
+
+\Function{strongconnect}{$v$}
+    \State {\small\texttt{// Set the depth index for v to the smallest unused index}}
+    \State $v.\text{index} \gets index$
+    \State $v.\text{lowlink} \gets index$
+    \State $index \gets index + 1$
+    \State $S.push(v)$
+    \State $v.onStack \gets \text{true}$
+
+    \State {\small\texttt{// Consider successors of v}}
+    \ForAll{$(v, w) \in E$}
+        \If{$w.index$ is undefined}
+            \State {\small\texttt{// Successor w has not yet been visited; recurse on it}}
+            \State \Call{strongconnect}{$w$}
+            \State $v.\text{lowlink} \gets \min(v.\text{lowlink}, w.\text{lowlink})$
+        \ElsIf{$w.onStack$}
+            \State {\small\texttt{// Successor w is in stack S and hence in the current SCC}}
+            \State {\small\texttt{// If w is not on stack, then (v, w) is an edge pointing to an SCC already}}
+            \State {\small\texttt{// found and must be ignored}}
+            \State {\small\texttt{// See below regarding the next line}}
+            \State $v.\text{lowlink} \gets \min(v.\text{lowlink}, w.\text{index})$
+        \EndIf
+    \EndFor
+
+    \State {\small\texttt{// If v is a root node, pop the stack and generate an SCC}}
+    \If{$v.\text{lowlink} = v.\text{index}$}
+        \State start a new strongly connected component
+        \Repeat
+            \State $w \gets S.pop()$
+            \State $w.onStack \gets \text{false}$
+            \State add $w$ to current strongly connected component
+        \Until{$w = v$}
+        \State \textbf{output} the current strongly connected component
+    \EndIf
+\EndFunction
+
+\end{algorithmic}
+\end{algorithm}
 
 
 \printbibliography
