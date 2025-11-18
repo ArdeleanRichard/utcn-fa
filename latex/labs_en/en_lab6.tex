@@ -24,7 +24,7 @@
 \def\labelenumi{\arabic{enumi}.}
 \item
   You are required to implement \textbf{correctly} and
-  \textbf{efficiently} \emph{iterative} and \emph{recursive} binary tree
+  \textbf{efficiently} \emph{iterative} (can be found in Lecture 6) and \emph{recursive} binary tree
   traversal. You may find any necessary information and pseudo-code in
   your course and seminar notes.
 \item
@@ -46,18 +46,19 @@
     key and two pointers, one to the first child and the second to the
     right sibling (e.g., the next sibling).
   \end{enumerate}
+
+  Therefore, you need to define transformation \textbf{T1} from the
+    \emph{parent representation} (\textbf{R1)} to the \emph{multi-way tree
+    representation} (\textbf{R2}), and then the transformation \textbf{T2}
+    from the \emph{multi-way tree representation} (\textbf{R2}) to the
+    \emph{binary representation} (\textbf{R3}). For all representations
+    (\textbf{R1}, \textbf{R2}, \textbf{R3}), you need to implement the
+    Pretty Print (\textbf{PP}) display (see page 3).
+    
+    Define the data structures. You can use intermediate structures (e.g., additional memory).
 \end{enumerate}
 
-Therefore, you need to define transformation \textbf{T1} from the
-\emph{parent representation} (\textbf{R1)} to the \emph{multi-way tree
-representation} (\textbf{R2}), and then the transformation \textbf{T2}
-from the \emph{multi-way tree representation} (\textbf{R2}) to the
-\emph{binary representation} (\textbf{R3}). For all representations
-(\textbf{R1}, \textbf{R2}, \textbf{R3}), you need to implement the
-Pretty Print (\textbf{PP}) display (see page 2).
 
-Define the data structures. You can use intermediate structures (e.g.,
-additional memory).
 
 
 
@@ -71,9 +72,7 @@ The lack of any of the minimum requirements (even partially) may result in a low
 \item
   \emph{Demo}: Prepare a demonstration of correctness for each algorithm implemented. The correctness of each algorithm is demonstrated through a simple example (maximum 10 values).
 \item
-  The charts created must be easy to evaluate as in grouped and added through the Profiler functions as specified by the assignment requirements. The assignment will not be evaluated if it contains a plethora of ungrouped charts. For example, the comparative analysis implies the grouping of the compared algorithms.
-\item
-  Interpret the chart and write your observations in the header (block
+  Write your observations in the header (block
   comments) section at the beginning of your \emph{main.cpp} file.
 \item
   We do not accept assignments without code indentation and with code
@@ -93,41 +92,44 @@ The lack of any of the minimum requirements (even partially) may result in a low
 
 \subsection{Requirements}\label{requirements}
 
-\subsubsection{\texorpdfstring{Implementation of \emph{iterative} and
-\emph{recursive} binary tree traversal in \emph{O(n)} and \emph{with
-constant additional memory}
+\subsubsection{\texorpdfstring{Implementation of \emph{iterative} (\emph{with constant additional memory}) and
+\emph{recursive} binary tree traversal in \emph{O(n)}
 (3p)}{Implementation of iterative and recursive binary tree traversal in O(n) and with constant additional memory (3p)}}\label{implementation-of-iterative-and-recursive-binary-tree-traversal-in-on-and-with-constant-additional-memory-3p}
 
-\emph{Demo}: You will have to prove your algorithm(s) work on a small-sized input.
+\emph{Demo}: You will have to prove your algorithm(s) work on a small-sized input.\\
 
-\subsubsection{Correct implementation for Pretty-print for R1
-(2p)}\label{correct-implementation-for-pretty-print-for-r1-2p}
+Only one tree traversal order is required— Preorder, Inorder, or Postorder—and you may choose whichever you prefer.
 
-\emph{Demo}: The correctness of the algorithms should be demonstrated using the
-example \(\Pi = \{ 2,7,5,2,7,7, - 1,5,2\}\).
+You may generate a sorted array that can be transformed into a binary tree through a recursive approach.
 
-\subsubsection{\texorpdfstring{Correct implementation for \emph{T1 (from R1
-to R2)} and pretty-print for \emph{R2} (1p) + \emph{T1} in linear time
-(1p)}{Correct implementation for T1 (from R1 to R2) and pretty-print for R2 (1p) + T1 in linear time (1p)}}\label{correct-implementation-for-t1-from-r1-to-r2-and-pretty-print-for-r2-1p-t1-in-linear-time-1p}
+\subsubsection{\texorpdfstring{Transformations between tree representations}{Transformations between tree representations}}\label{transformations-between-tree-representationsp}
 
-\emph{Demo}: The correctness of the algorithms should be demonstrated using the
-example \(\Pi = \{ 2,7,5,2,7,7, - 1,5,2\}\).
 
-\subsubsection{\texorpdfstring{Correct implementation for \emph{T2}
-\emph{(from R2 to R3)} and pretty-print for \emph{R3} (2p) + \emph{T2}
-in linear time
-(1p)}{Correct implementation for T2 (from R2 to R3) and pretty-print for R3 (2p) + T2 in linear time (1p)}}\label{correct-implementation-for-t2-from-r2-to-r3-and-pretty-print-for-r3-2p-t2-in-linear-time-1p}
+\begin{itemize}
+  \item[1.] \textbf{Correct implementation for Pretty-print for R1 (2p)}  
+  
+  \emph{Demo}: The correctness of the algorithms should be demonstrated using the example  
+  $\Pi = \{2,7,5,2,7,7,-1,5,2\}$ with a pretty-print, as shown in the Figure below.
 
-\emph{Demo}: The correctness of the algorithms should be demonstrated using the
-example \(\Pi = \{ 2,7,5,2,7,7, - 1,5,2\}\).
+  \item[2.] \textbf{Correct implementation for \emph{T1} (from R1 to R2) and pretty-print for \emph{R2} (1p) + \emph{T1} in linear time (1p)}  
+  
+  \emph{Demo}: The correctness of the algorithms should be demonstrated using the example  
+  $\Pi = \{2,7,5,2,7,7,-1,5,2\}$ with a pretty-print, as shown in the Figure below.
 
-Use Pretty Print for all three representations. \emph{Each
-representation (R1,R2,R3) should have a pretty print of its own with a
-different implementation but with the same print.}
+  \item[3.] \textbf{Correct implementation for \emph{T2} (from R2 to R3) and pretty-print for \emph{R3} (2p) + \emph{T2} in linear time (1p)}  
+  
+  \emph{Demo}: The correctness of the algorithms should be demonstrated using the example  
+  $\Pi = \{2,7,5,2,7,7,-1,5,2\}$ with a pretty-print, as shown in the Figure below.
 
-\includegraphics[width=\textwidth]{../Resources/lab6/Lab6_representations.png}
+\end{itemize}
+
+Use Pretty Print for all three representations.  
+Each representation (R1, R2, R3) should have a pretty print of its own with a different implementation but with the same result.
 
 Analyse the time and space efficiency of the two transformations. Did
 you achieve \emph{O(n)}? Did you use additional memory?
+
+\includegraphics[width=\textwidth]{../Resources/lab6/Lab6_representations.png}
+
 
 \end{document}

@@ -24,7 +24,7 @@
 \def\labelenumi{\arabic{enumi}.}
 \item
   Se cere implementarea \textbf{corectă} și \textbf{eficientă} a
-  traversării \emph{iterative} și \emph{recursive} a unui arbore binar.
+  traversării \emph{iterative} (se poate găsi în Curs 6) și \emph{recursive} a unui arbore binar.
   Puteți găsi orice informații necesare și pseudocod în notele de curs
   și seminar.
 \item
@@ -46,19 +46,19 @@
     si doi pointeri: unul către primul copil si al doilea către fratele
     din dreapta (ex: următorul frate).
   \end{enumerate}
+
+  Așadar, trebuie să definiți transformarea \textbf{T1} din
+    \emph{reprezentarea} \emph{părinte} (\textbf{R1}) în
+    \emph{reprezentarea} \emph{arbore multicăi} (\textbf{R2}), iar apoi
+    transformarea \textbf{T2} din \emph{reprezentarea} \emph{arbore
+    multicăi} (\textbf{R2}) în \emph{reprezentarea} \emph{binară}
+    (\textbf{R3}). Pentru toate reprezentările (\textbf{R1}, \textbf{R2},
+    \textbf{R3}) trebuie să implementați afișarea prietenoasă (pretty print, \textbf{PP}) (vezi pagina 3).
+    
+    Definiți structurile de date. Puteți folosi structuri intermediare (ex: memorie adițională).
+
 \end{enumerate}
 
-Așadar, trebuie să definiți transformarea \textbf{T1} din
-\emph{reprezentarea} \emph{părinte} (\textbf{R1}) în
-\emph{reprezentarea} \emph{arbore multicăi} (\textbf{R2}), iar apoi
-transformarea \textbf{T2} din \emph{reprezentarea} \emph{arbore
-multicăi} (\textbf{R2}) în \emph{reprezentarea} \emph{binară}
-(\textbf{R3}). Pentru toate reprezentările (\textbf{R1}, \textbf{R2},
-\textbf{R3}) trebuie să implementați afișarea prietenoasă (pretty print,
-\textbf{PP}) (vezi pagina 2).
-
-Definiți structurile de date. Puteți folosi structuri intermediare (ex:
-memorie adițională).
 
 
 
@@ -73,9 +73,7 @@ Lipsa oricărei cerințe minimale (chiar și parțială) poate rezulta într-o n
   \emph{Demo}: Pregătiți un exemplu pentru exemplificarea corectitudinii fiecărui
   algoritm implementat. Corectitudinea fiecărui algoritm se demonstrează printr-un exemplu simplu (maxim 10 valori).
 \item
-    Graficele create trebuie să fie ușor de evaluat, adică grupate și adunate prin funcțiile Profiler după cerințele temei. Tema nu va fi evaluată dacă conține o multitudine de grafice negrupate. De exemplu, analiza comparativă implică gruparea într-un singur grafic a algoritmilor comparați.
-\item
-  Interpretați graficul/graficele și notați observațiile personale în antetul
+  Notați observațiile personale în antetul
   fișierului \emph{main.cpp}, într-un comentariu bloc informativ.
 \item
   Nu preluăm teme care nu sunt indentate și care nu sunt organizate în
@@ -89,47 +87,45 @@ Lipsa oricărei cerințe minimale (chiar și parțială) poate rezulta într-o n
 
 
 
-
 \subsection{Cerințe}\label{cerinux21be}
 
-\subsubsection{\texorpdfstring{Implementare a parcurgerii iterative și
-recursive a unui arbore binar în \emph{O(n)} și cu \emph{memorie
-aditională constantă}
+\subsubsection{\texorpdfstring{Implementare a parcurgerii \emph{iterative}  (cu \emph{memorie aditională constantă}) și \emph{recursive} a unui arbore binar în \emph{O(n)} 
 (3p)}{Implementare a parcurgerii iterative și recursive a unui arbore binar în O(n) și cu memorie aditională constantă (3p)}}\label{implementare-a-parcurgerii-iterative-ux219i-recursive-a-unui-arbore-binar-uxeen-on-ux219i-cu-memorie-aditionalux103-constantux103-3p}
 
 \emph{Demo}: Corectitudinea algoritmilor va trebui exemplificată pe date de intrare
-de dimensiuni mici.
+de dimensiuni mici. \\
 
-\subsubsection{\texorpdfstring{Implementarea corectă la pretty-print la
-\emph{R1}
-(2p)}{Implementarea corectă la pretty-print la R1 (2p)}}\label{implementarea-corectux103-la-pretty-print-la-r1-2p}
+Este necesară o singură ordine de parcurgere a arborelui — Preorder, Inorder sau Postorder — și puteți alege după preferințe.
 
-\emph{Demo}: Corectitudinea algoritmilor va trebui demonstrată pe exemplul
-\(\Pi = \{ 2,7,5,2,7,7, - 1,5,2\}\).
+Puteți genera un vectot sortat care poate fi transformat într-un arbore binar printr-o abordare recursivă.
 
+\subsubsection{\texorpdfstring{Transformări între reprezentările arborilor}{Transformări între reprezentările arborilor}}\label{transformations-between-tree-representationsp}
 
-\subsubsection{\texorpdfstring{Implementarea corectă la \emph{T1 (din R1 în
-R2)} și pretty-print la \emph{R2} (1p) + \emph{T1} în timp liniar
-(1p)}{Implementarea corectă la T1 (din R1 în R2) și pretty-print la R2 (1p) + T1 în timp liniar (1p)}}\label{implementarea-corectux103-la-t1-din-r1-uxeen-r2-ux219i-pretty-print-la-r2-1p-t1-uxeen-timp-liniar-1p}
+\begin{itemize}
+  \item[1.] \textbf{Implementare corectă pentru Pretty-print pentru R1 (2p)}  
+  
+  \emph{Demo}: Corectitudinea algoritmilor trebuie demonstrată folosind exemplul  
+  $\Pi = \{2,7,5,2,7,7,-1,5,2\}$ cu un pretty-print, așa cum este prezentat în figura de mai jos.
 
-\emph{Demo}: Corectitudinea algoritmilor va trebui demonstrată pe exemplul
-\(\Pi = \{ 2,7,5,2,7,7, - 1,5,2\}\).
+  \item[2.] \textbf{Implementare corectă pentru \emph{T1} (de la R1 la R2) și pretty-print pentru \emph{R2} (1p) + \emph{T1} în timp liniar (1p)}  
+  
+  \emph{Demo}: Corectitudinea algoritmilor trebuie demonstrată folosind exemplul  
+  $\Pi = \{2,7,5,2,7,7,-1,5,2\}$ cu un pretty-print, așa cum este prezentat în figura de mai jos.
 
+  \item[3.] \textbf{Implementare corectă pentru \emph{T2} (de la R2 la R3) și pretty-print pentru \emph{R3} (2p) + \emph{T2} în timp liniar (1p)}  
+  
+  \emph{Demo}: Corectitudinea algoritmilor trebuie demonstrată folosind exemplul  
+  $\Pi = \{2,7,5,2,7,7,-1,5,2\}$ cu un pretty-print, așa cum este prezentat în figura de mai jos.
 
-\subsubsection{\texorpdfstring{Implementarea corectă la \emph{T2} (din R2
-în R3) și pretty-print la \emph{R3} (2p) + \emph{T2} în timp liniar
-(1p)}{Implementarea corectă la T2 (din R2 în R3) și pretty-print la R3 (2p) + T2 în timp liniar (1p)}}\label{implementarea-corectux103-la-t2-din-r2-uxeen-r3-ux219i-pretty-print-la-r3-2p-t2-uxeen-timp-liniar-1p}
-
-\emph{Demo}: Corectitudinea algoritmilor va trebui demonstrată pe exemplul
-\(\Pi = \{ 2,7,5,2,7,7, - 1,5,2\}\).
+\end{itemize}
 
 Folosiți afișarea prietenoasă pentru cele trei reprezentări.
 \emph{Fiecare reprezentare (R1,R2,R3) necesită o afișare prietenoasă cu
-o implementare diferită dar aceeași afișare.}
-
-\includegraphics[width=\textwidth]{../Resources/lab6/Lab6_representations.png}
+o implementare diferită dar același rezultat.}
 
 Analizați eficienta în timp și spațiu a celor două transformări. Ați
 atins \emph{O(n)}? Ați folosit memorie adițională?
+
+\includegraphics[width=\textwidth]{../Resources/lab6/Lab6_representations.png}
 
 \end{document}
